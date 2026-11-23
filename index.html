@@ -451,6 +451,56 @@ td{padding:15px 10px 15px 0}th{padding:12px 10px 12px 0}
 .strip a{min-height:178px}.strip .nx{font-size:14px}
 .strip .bgic{right:-6px!important;top:auto!important;bottom:-22px}.strip .bgic svg{width:130px;height:130px}
 @media(max-width:760px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+/* ===== today v5: simple & live ===== */
+.hero2{min-height:500px}
+.hero2 .eyebrow{text-transform:none;color:#aeb6bc}
+.bigclock{font-size:clamp(64px,8.4vw,120px);font-weight:700;letter-spacing:-.06em;line-height:.9;color:#fff;font-variant-numeric:tabular-nums;margin:6px 0 18px;text-shadow:0 0 60px rgba(139,92,246,.35)}
+.bigclock small{font-size:.38em;color:#7d878e;letter-spacing:-.02em;font-weight:600;margin-left:8px;vertical-align:.95em}
+.hero2 h1{font-size:clamp(26px,2.6vw,34px);letter-spacing:-.03em;line-height:1.1}
+.hero2 .sub{font-size:16px;margin-top:10px}
+#nextup{color:#d7dde1}
+.dayp{margin-top:24px;max-width:460px}
+.dayp .dl{display:flex;justify-content:space-between;font-size:12.5px;color:#8d969d;margin-bottom:8px}
+.dayp .bar{height:5px;background:rgba(255,255,255,.08);border-radius:3px;overflow:hidden}
+.dayp i{display:block;height:100%;background:linear-gradient(90deg,#4c6ef5,#8b5cf6,#ff5a3d);border-radius:3px;transition:width 1s}
+/* slim area tiles */
+.atiles{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+.at{--cc:#888;display:flex;align-items:center;gap:14px;padding:18px;border-radius:16px;text-decoration:none;color:#fff;background:linear-gradient(150deg,color-mix(in srgb,var(--cc) 88%,#fff),color-mix(in srgb,var(--cc) 55%,#07090b));box-shadow:inset 0 1px 0 rgba(255,255,255,.25),0 12px 28px color-mix(in srgb,var(--cc) 25%,transparent);transition:transform .2s,box-shadow .2s}
+.at:hover{transform:translateY(-3px);box-shadow:inset 0 1px 0 rgba(255,255,255,.3),0 18px 36px color-mix(in srgb,var(--cc) 38%,transparent)}
+.it2{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.2);display:grid;place-items:center;flex:none}
+.atx{display:grid;gap:2px;min-width:0}
+.an{font-size:13px;font-weight:600;opacity:.9;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.av{font-size:13px;opacity:.85;white-space:nowrap}.av b{font-size:22px;font-weight:700;letter-spacing:-.03em;opacity:1}
+/* timeline */
+.tg{display:flex;justify-content:space-between;font-size:12.5px;font-weight:700;color:var(--mute);padding:18px 0 4px;letter-spacing:.01em}
+.tg:first-of-type{padding-top:6px}
+.tg.late{color:#ff8a70}
+.tlist{position:relative;margin-left:6px}
+.tlist::before{content:"";position:absolute;left:5px;top:10px;bottom:10px;width:1px;background:linear-gradient(var(--line),var(--line))}
+.tl{display:grid;grid-template-columns:28px minmax(0,1fr) auto;gap:14px;align-items:center;padding:14px 0;border-bottom:1px solid var(--line)}
+.tl:last-child{border-bottom:0}
+.tl .dot{width:11px;height:11px;border-radius:50%;background:var(--cc);box-shadow:0 0 0 4px color-mix(in srgb,var(--cc) 20%,transparent),0 0 14px color-mix(in srgb,var(--cc) 60%,transparent);position:relative;z-index:1}
+.tg.late+.tlist .dot{background:#ff5a3d;box-shadow:0 0 0 4px rgba(255,90,61,.2),0 0 16px rgba(255,90,61,.7)}
+.tla{display:flex;align-items:center;gap:10px}
+.tl .chk{margin:0}
+.tl .meta svg{vertical-align:-2px}.tl .meta .ai{display:inline-grid;vertical-align:middle;margin-right:5px;position:relative;top:-1px}
+.tl.done .tt{text-decoration:line-through;color:var(--soft)}
+.tl.done .chk{background:var(--ink);border-color:var(--ink)}.tl.done .chk svg{opacity:1;stroke:var(--bg)}
+/* side cards */
+.wk{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:8px;padding-top:10px;text-align:center}
+.wk .wb{height:90px;display:flex;align-items:flex-end;background:rgba(255,255,255,.03);border-radius:8px;overflow:hidden}
+.wk .wb i{width:100%;display:block;background:linear-gradient(to top,rgba(139,92,246,.55),rgba(139,92,246,.9));border-radius:6px 6px 0 0}
+.wk .on .wb i{background:linear-gradient(to top,#ff5a3d,#ff8a70)}
+.wk b{display:block;font-size:14px;margin-top:8px;min-height:20px}
+.wk span{font-size:12px;color:var(--mute)}.wk .on span{color:var(--ink);font-weight:600}
+.mline,.gline{display:flex;justify-content:space-between;gap:16px;align-items:flex-end;padding-top:10px}
+.gline>div:first-child{flex:1}
+.k{display:block;font-size:12.5px;color:var(--mute);font-weight:600;margin-bottom:6px}
+.big2{font-size:28px;font-weight:700;letter-spacing:-.03em;white-space:nowrap}.big2.neg{color:var(--accent)}
+.big2 small{font-size:14px;color:var(--mute);font-weight:500}
+.r2{display:grid;text-align:right;gap:2px;font-size:14px}
+@media(max-width:1200px){.atiles{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:600px){.atiles{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.at{padding:14px;gap:10px}.it2{width:34px;height:34px}.bigclock{font-size:64px}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -642,36 +692,41 @@ return CAL.events.slice(0,7).map(e=>{const d=new Date(e.s);const day=isNaN(d)?''
 /* ---------- views ---------- */
 let filt='all',sample=null,busy={},finM=today().slice(0,7),finTab='overview',finDay=null;
 const V={};
-V.today=()=>{const h=new Date().getHours();const greet=h<12?'Good morning':h<17?'Good afternoon':'Good evening';
-const all=open().sort(byDue);const late=all.filter(t=>t.due&&diff(t.due)<0).length;const wkList=all.filter(t=>t.due&&diff(t.due)>=0&&diff(t.due)<7);
-const doneWk=S.tasks.filter(t=>t.done&&t.doneAt&&diff(t.doneAt)>-7).length;const prog=doneWk+wkList.length+late?doneWk/(doneWk+wkList.length+late):0;
-const d=new Date();const list=(filt==='all'?all:all.filter(t=>t.area===filt)).slice(0,8);const f=fin();
-const focus=all.find(t=>t.due&&diff(t.due)<0)||all.find(t=>t.pri==='High')||all[0];
-const gs=S.goals.reduce((a,g)=>a+(+g.saved||0),0),gt=S.goals.reduce((a,g)=>a+(+g.target||0),0);
-const C=2*Math.PI*26;const ring=`<svg class="ring" viewBox="0 0 64 64"><circle cx="32" cy="32" r="26" fill="none" stroke="rgba(255,255,255,.12)" stroke-width="7"/><circle cx="32" cy="32" r="26" fill="none" stroke="#38c98f" stroke-width="7" stroke-dasharray="${prog*C} ${C}" transform="rotate(-90 32 32)"/><text x="32" y="37" text-anchor="middle" font-size="14" font-weight="700" fill="#fff">${Math.round(prog*100)}%</text></svg>`;
-const strip=['academics','business','leadership','finance','ideas','growth'].map(a=>{let big,nx,pct;
-if(a==='finance'){big=short(Math.abs(f.net));nx=(f.net<0?'Net loss':'Net')+' this month · GH₵';const B=S.budgets.reduce((x,b)=>x+(+b.limit||0),0);pct=B?f.exp/B*100:0}
-else if(a==='ideas'){const top=rankedIdeas()[0];big=S.ideas.filter(i=>i.stage!=='Parked').length;nx=top?'Top: '+esc(top.title):'No ideas yet';pct=S.ideas.length?S.ideas.filter(i=>i.d&&i.f&&i.v).length/S.ideas.length*100:0}
-else{const o=open(a).sort(byDue);const dn=S.tasks.filter(t=>t.area===a&&t.done).length;big=o.length;nx=o[0]?'Next: '+esc(o[0].title):'All clear';pct=o.length+dn?dn/(o.length+dn)*100:0}
-return`<a href="#${a}" style="--cc:var(--c-${a})"><span class="bgic">${icon(a,110)}</span><span class="tp">${it(a,'var(--c-'+a+')')}<span class="go">→</span></span><span class="lbl"><b>${AREAS[a]}</b></span><span class="big">${big}</span><span class="nx">${nx}</span>${meter(pct,'var(--c-'+a+')')}</a>`}).join('');
+V.today=()=>{const now=new Date(),h=now.getHours();const greet=h<5?'Still up':h<12?'Good morning':h<17?'Good afternoon':'Good evening';
+const all=open().sort(byDue);const late=all.filter(t=>t.due&&diff(t.due)<0);const f=fin();
+const focus=late[0]||all.find(t=>t.pri==='High')||all[0];
+const groups=[['Overdue',t=>t.due&&diff(t.due)<0],['Today',t=>t.due&&diff(t.due)===0],['Tomorrow',t=>t.due&&diff(t.due)===1],['Later this week',t=>t.due&&diff(t.due)>1&&diff(t.due)<7]];
+const evs=CAL.events.map(e=>({...e,d:new Date(e.s)})).filter(e=>!isNaN(e.d));
+const evRow=e=>`<li class="tl ev2"><span class="dot" style="--cc:#3b82f6"></span><div><div class="tt">${esc(e.t)}</div><div class="meta">${icon('calendar',13)} ${e.all?'All day':esc(e.d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'}))}</div></div><span></span></li>`;
+const tRow=t=>`<li class="tl ${t.done?'done':''}"><span class="dot" style="--cc:var(--c-${t.area})"></span><div><div class="tt">${esc(t.title)}${t.pri==='High'?' <span class="hi">·&nbsp;High</span>':''}</div><div class="meta">${sw(t.area)}${AREAS[t.area]}${t.ref?' · '+esc(t.ref):''}</div></div><div class="tla"><div class="ra">${rowActs('task',t.id)}</div><button class="chk" data-act="toggle" data-id="${t.id}" aria-label="Mark done: ${esc(t.title)}">${ICON.check}</button></div></li>`;
+let tl='';let shown=0;groups.forEach(([g,fn],gi)=>{const ts=all.filter(fn);const es=gi===1?evs.filter(e=>diff(iso(e.d))===0):gi===2?evs.filter(e=>diff(iso(e.d))===1):[];if(!ts.length&&!es.length)return;
+const rows=[...es.map(evRow),...ts.slice(0,gi===3?4:8).map(tRow)];shown+=rows.length;tl+=`<div class="tg ${gi===0?'late':''}"><span>${g}</span><span>${ts.length+es.length}</span></div><ul class="list tlist">${rows.join('')}</ul>`});
+const week=Array.from({length:7},(_,i)=>{const ds=plus(i);return{ds,n:all.filter(t=>t.due===ds).length+(i===0?late.length:0)}});const wm=Math.max(1,...week.map(w=>w.n));
 const days14=Array.from({length:14},(_,i)=>{const s=plus(i-13);return S.txns.filter(t=>t.date===s&&t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0)});const mx=Math.max(1,...days14);
-const cs=Object.values(S.cs50).filter(Boolean).length/CS50.length;const C2=2*Math.PI*20;
-return`<div class="hero"><div class="hl"><div class="eyebrow"><span class="live"></span><span id="clock">${clockStr()}</span>· ${DAYS[d.getDay()]}, ${d.getDate()} ${MON[d.getMonth()]} ${d.getFullYear()}</div><h1>${greet},<br>James</h1><p class="sub">You have <b>${wkList.length}</b> things due this week${late?` and <b style="color:#ff7a5e">${late} overdue</b>`:''}.</p>
-${focus?`<div class="focus">${it('target')}<div><small>Focus now · ${AREAS[focus.area]}${focus.due?' · '+rel(focus.due):''}</small><b>${esc(focus.title)}</b></div><button class="btn sm" data-act="toggle" data-id="${focus.id}">${icon('check',15)}Done</button></div>`:''}
-<div class="hk"><div>${ring}<span class="l">Week progress</span></div><div><span class="n">${wkList.length}</span><span class="l">Due in 7 days</span></div><div class="${late?'late':''}"><span class="n">${late}</span><span class="l">Overdue</span></div></div>
-<div class="hb"><button class="btn sm ghost" data-act="add" data-t="task">${icon('plus',14)}New task</button>${sample?`<button class="btn sm ghost" data-act="plan">${icon('spark',14)}${busy.plan?'Planning…':'Plan my week'}</button>`:''}<button class="btn sm ghost" data-act="pal">${icon('list',14)}Command <kbd>⌘K</kbd></button></div></div>
-<div class="orbit"><svg data-draw="orbit" role="img" aria-label="Map of your six areas and their open items"></svg><div class="olg">Live map · tap an area</div></div></div>
-<div class="strip">${strip}</div>
-<div class="grid2 sec"><div style="display:grid;gap:18px;align-content:start"><section><div class="sh"><h2>Up next</h2><div class="tabs">${['all','academics','business','leadership','growth','general'].map(a=>`<button data-act="filt" data-a="${a}" aria-pressed="${filt===a}">${a==='all'?'All':AREAS[a]}</button>`).join('')}</div></div>
-${taskList(list,true,'No open tasks here.')}${starterNote('tasks')}</section>
-${sample?`<section class="claude"><div class="ch"><h3>${it('spark','var(--c-ideas)')}Your week, planned by Claude</h3><button class="btn sm" data-act="plan" ${busy.plan?'disabled':''}>${busy.plan?'Planning…':S.plan?'Re-plan':'Plan my week'}</button></div>${S.plan?`<div class="out" id="planout">${esc(S.plan.text)}</div><div class="when2">Planned ${esc(new Date(S.plan.at).toLocaleString('en-GB',{weekday:'short',hour:'2-digit',minute:'2-digit'}))}</div>`:`<div class="out" id="planout" style="color:var(--mute)">Claude reads your open tasks, calendar and study blocks, then lays out the next seven days.</div>`}</section>`:''}</div>
-<aside class="side"><section><div class="sh"><h2>Calendar</h2><span class="note">Next 7 days</span></div>${calBlock()}</section>
-<section><div class="sh"><h2>Money this month</h2><a class="note" href="#finance">Open →</a></div><div class="figs"><div><div class="k">In</div><div class="v" style="color:var(--ok)">${short(f.inc)}</div></div><div><div class="k">Out</div><div class="v" style="color:var(--accent)">${short(f.exp)}</div></div><div><div class="k">Net (GH₵)</div><div class="v ${f.net<0?'neg':''}">${short(f.net)}</div></div></div>
-<div class="minib" title="Spending, last 14 days">${days14.map((v,i)=>`<i style="height:${v?Math.max(6,v/mx*100):3}%;${i===13?'background:var(--accent)':''}"></i>`).join('')}</div><div class="axis"><span>14 days ago</span><span>Today</span></div>
-${gt?`<div class="mrow" style="border-bottom:0"><span>Savings goals</span><span class="r">${money(gs)} of ${money(gt)}</span>${meter(gs/gt*100,'var(--ok)')}</div>`:''}</section>
+const cs=Object.values(S.cs50).filter(Boolean).length/CS50.length;
+const tiles=['academics','business','leadership','finance','ideas','growth'].map(a=>{let n,l;if(a==='finance'){n=short(f.net);l='net'}else if(a==='ideas'){n=S.ideas.filter(i=>i.stage!=='Parked').length;l='active'}else{n=open(a).length;l='open'}
+return`<a href="#${a}" class="at" style="--cc:var(--c-${a})"><span class="it2">${icon(a,18)}</span><span class="atx"><span class="an">${AREAS[a]}</span><span class="av"><b class="${typeof n==='number'?'cu':''}" data-v="${n}">${n}</b> ${l}</span></span></a>`}).join('');
+return`<div class="hero hero2"><div class="hl">
+<div class="eyebrow"><span class="live"></span>Live · ${DAYS[now.getDay()]==='Sun'?'Sunday':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]}, ${now.getDate()} ${['January','February','March','April','May','June','July','August','September','October','November','December'][now.getMonth()]}</div>
+<div class="bigclock" id="bigclock">${bigClock()}</div>
+<h1>${greet}, James.</h1>
+<p class="sub">${late.length?`<b style="color:#ff8a70">${late.length} overdue</b> · `:''}<b>${all.filter(t=>t.due&&diff(t.due)>=0&&diff(t.due)<7).length}</b> due this week · <span id="nextup">${nextUp()}</span></p>
+<div class="dayp"><div class="dl"><span>Day progress</span><span id="daypct">${dayPct()}%</span></div><div class="bar"><i id="daybar" style="width:${dayPct()}%"></i></div></div>
+${focus?`<div class="focus">${it('target')}<div><small>Focus now · ${AREAS[focus.area]}${focus.due?' · '+rel(focus.due):''}</small><b>${esc(focus.title)}</b></div><button class="btn sm" data-act="toggle" data-id="${focus.id}">${icon('check',15)}Done</button></div>`:`<div class="focus">${it('check','#3ddc97')}<div><small>Focus now</small><b>Nothing urgent. Nice.</b></div></div>`}
+</div><div class="orbit"><svg data-draw="orbit" role="img" aria-label="Map of your six areas and their open items"></svg><div class="olg">Live map · tap an area</div></div></div>
+<div class="atiles">${tiles}</div>
+<div class="grid2 sec"><section><div class="sh"><h2>Today &amp; next</h2><div style="display:flex;gap:10px">${addBtn('task','Task')}${sample?`<button class="add" data-act="plan">${icon('spark',14)}${busy.plan?'Planning…':'Plan week'}</button>`:''}</div></div>
+${tl||`<div class="emptyc">${it('check','var(--ok)')}<span>Nothing due this week. Enjoy the space.</span></div>`}
+${S.plan&&sample?`<div class="claude" style="margin-top:22px"><h3>${it('spark','var(--c-ideas)')}Your week, planned by Claude</h3><div class="out" id="planout">${esc(S.plan.text)}</div></div>`:busy.plan?`<div class="claude" style="margin-top:22px"><div class="out" id="planout"></div></div>`:''}
+${starterNote('tasks')}</section>
+<aside class="side">
+<section><div class="sh"><h2>This week</h2><span class="note">Deadlines per day</span></div><div class="wk">${week.map((w,i)=>{const d=pd(w.ds);return`<div class="${i===0?'on':''}"><div class="wb"><i style="height:${w.n?Math.max(10,w.n/wm*100):3}%"></i></div><b>${w.n||''}</b><span>${i===0?'Today':DAYS[d.getDay()]}</span></div>`}).join('')}</div></section>
+<section><div class="sh"><h2>Money</h2><a class="note" href="#finance">Open →</a></div><div class="mline"><div><span class="k">Net this month</span><span class="big2 ${f.net<0?'neg':''}">${money(f.net)}</span></div><div class="r2"><span class="i">+${short(f.inc)}</span><span class="o">−${short(f.exp)}</span></div></div>
+<div class="minib" title="Spending, last 14 days">${days14.map((v,i)=>`<i style="height:${v?Math.max(6,v/mx*100):3}%;${i===13?'background:var(--accent)':''}"></i>`).join('')}</div><div class="axis"><span>Spending, last 14 days</span><span>Today</span></div></section>
 <section><div class="sh"><h2>Growth</h2><a class="note" href="#growth">Open →</a></div>
-<div style="display:grid;grid-template-columns:auto minmax(0,1fr);gap:16px;align-items:center;padding-top:8px"><svg viewBox="0 0 52 52" width="76" height="76"><circle cx="26" cy="26" r="20" fill="none" stroke="var(--panel)" stroke-width="7"/><circle cx="26" cy="26" r="20" fill="none" stroke="var(--c-growth)" stroke-width="7" stroke-dasharray="${cs*C2} ${C2}" transform="rotate(-90 26 26)"/><text x="26" y="30" text-anchor="middle" font-size="11" font-weight="700" fill="var(--ink)">${Math.round(cs*100)}%</text></svg>
-<div><b>CS50W progress</b><div class="meta">${streak()}-day practice streak · ${S.books.filter(b=>b.status==='Reading').map(b=>esc(b.title)).join(', ')||'No book in progress'}</div></div></div></section></aside></div>`};
+<div class="gline"><div><span class="k">CS50W</span>${meter(cs*100,'var(--c-growth)')}<span class="meta">${Math.round(cs*100)}% complete</span></div><div><span class="k">Streak</span><span class="big2">${streak()}<small> days</small></span></div></div></section>
+${CAL.state==='on'&&!evs.length?'':CAL.state!=='on'?`<section><div class="sh"><h2>Calendar</h2></div>${calBlock()}</section>`:''}
+</aside></div>`};
 
 V.academics=()=>{const ts=open('academics').sort(byDue);const todayD=DAYS[new Date().getDay()];
 return`<div class="hd"><div><h1>${ph('academics')}Academics</h1><p class="sub"><b>${ts.length}</b> open assignments across <b>${S.courses.length}</b> courses</p></div>${addBtn('task','New assignment','data-p="academics"')}</div>
@@ -778,7 +833,7 @@ const cur=()=>{const h=location.hash.slice(1);return VIEWS.includes(h)?h:'today'
 function render(){const v=cur();
 $('#nav').innerHTML=VIEWS.map(k=>`<a href="#${k}" ${k===v?'aria-current="page"':''}><span class="ni" style="--cc:${k==='today'?'#eceeef':'var(--c-'+k+')'}">${icon(k,16)}</span>${VNAME[k]}<span class="n">${k==='today'?'':k==='ideas'?S.ideas.filter(i=>i.stage!=='Parked').length:k==='finance'?'':open(k).length||''}</span></a>`).join('');
 $('#view').innerHTML=V[v]();document.title=v==='today'?'Nexus':VNAME[v]+' · Nexus';
-decorate(v);$('#refs').innerHTML=[...S.courses.map(c=>c.name),...S.ventures.map(x=>x.name),'Parliament','PR committee','Ascend campaign','CS50W'].map(n=>`<option value="${esc(n)}">`).join('');
+decorate(v);if(v!==lastView){lastView=v;countUp()}$('#refs').innerHTML=[...S.courses.map(c=>c.name),...S.ventures.map(x=>x.name),'Parliament','PR committee','Ascend campaign','CS50W'].map(n=>`<option value="${esc(n)}">`).join('');
 $('#clearStarter').hidden=!hasStarter();
 if(ro){ro.disconnect();ro=null}const figs=document.querySelectorAll('svg[data-draw]');if(figs.length){ro=new ResizeObserver(es=>es.forEach(e=>DRAW[e.target.dataset.draw](e.target)));figs.forEach(f=>ro.observe(f))}}
 function drawIdeas(s){const W=s.clientWidth,H=s.clientHeight;if(!W)return;const p=34,list=rankedIdeas();const x=v=>p+(v-1)/4*(W-p-14),y=v=>H-p-(v-1)/4*(H-p-14);
@@ -915,6 +970,17 @@ $('#pallist').addEventListener('click',e=>{const b=e.target.closest('.pi');if(b)
 $('#pal').addEventListener('click',e=>{if(e.target.id==='pal')palClose()});
 $('#kbtn').onclick=palOpen;
 document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();$('#pal').hidden?palOpen():palClose()}});
+
+
+const bigClock=()=>{const d=new Date();return`${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}<small>${String(d.getSeconds()).padStart(2,'0')}</small>`};
+const dayPct=()=>{const d=new Date();return Math.round((d.getHours()*60+d.getMinutes())/1440*100)};
+const dur=ms=>{const m=Math.max(0,Math.round(ms/6e4));return m<60?`${m}m`:`${Math.floor(m/60)}h ${m%60}m`};
+function nextUp(){const now=new Date();const ev=CAL.events.map(e=>({t:e.t,d:new Date(e.s),all:e.all})).filter(e=>!e.all&&!isNaN(e.d)&&e.d>now).sort((a,b)=>a.d-b.d)[0];
+if(ev)return`next: ${esc(ev.t)} in ${dur(ev.d-now)}`;const t=open().filter(t=>t.due&&diff(t.due)>=0).sort(byDue)[0];if(t)return`next deadline: ${esc(t.title)} · ${rel(t.due).toLowerCase()}`;
+const mid=new Date(now);mid.setHours(24,0,0,0);return`${dur(mid-now)} left today`}
+setInterval(()=>{const c=document.getElementById('bigclock');if(c)c.innerHTML=bigClock();const p=dayPct();const pb=document.getElementById('daybar');if(pb){pb.style.width=p+'%';document.getElementById('daypct').textContent=p+'%'}if(new Date().getSeconds()===0){const n=document.getElementById('nextup');if(n)n.innerHTML=nextUp()}},1000);
+let lastView='';
+function countUp(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.cu').forEach(el=>{const v=+el.dataset.v||0;const t0=performance.now();const step=t=>{const k=Math.min(1,(t-t0)/800);el.textContent=Math.round(v*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)})}
 
 /* ---------- boot ---------- */
 render();status('Saved on this device');
