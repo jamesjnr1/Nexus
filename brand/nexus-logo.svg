@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 160" width="1040" height="320">
+  <rect width="520" height="160" fill="#ffffff"/>
+  <g transform="translate(40 32) scale(3)">
+    <rect x="3" y="3" width="7" height="26" fill="#111416"/>
+    <rect x="22" y="3" width="7" height="26" fill="#111416"/>
+    <path d="M10 3h4.6L22 20.5V29h-4.6L10 11.5z" fill="#e5482d"/>
+  </g>
+  <text x="166" y="88" font-family="DM Sans, Inter, Helvetica, Arial, sans-serif" font-size="54" font-weight="700" letter-spacing="9" fill="#111416">NEXUS</text>
+  <text x="168" y="118" font-family="DM Sans, Inter, Helvetica, Arial, sans-serif" font-size="17" fill="#5b6166">One system. Everything connected.</text>
+</svg>
