@@ -394,6 +394,63 @@ box-shadow:inset 0 1px 0 rgba(255,255,255,.09),0 40px 80px rgba(0,0,0,.45)}
 @media(max-width:1080px){.hero{grid-template-columns:1fr}.orbit{min-height:380px;margin-top:28px}}
 @media(max-width:600px){.kbtn span{display:none}.orbit{min-height:320px}.hero{padding:22px}}
 @media(prefers-reduced-motion:reduce){.flow,.spin,.live{animation:none}}
+/* ===== v4: breathing room ===== */
+main{padding:32px clamp(20px,4.2vw,64px) 96px;max-width:1440px}
+.top{margin-bottom:40px;gap:16px}
+.hero{padding:48px 48px 44px;gap:40px;min-height:520px;margin-bottom:32px}
+.hero .sub{margin-top:16px;font-size:18px}
+.hero .eyebrow{margin-bottom:18px}
+.focus{margin-top:28px;padding:18px 20px}
+.hk{margin-top:24px;gap:16px}.hk>div{padding:20px;gap:10px}
+.hb{margin-top:26px!important;gap:12px!important}
+.strip{gap:22px}
+.strip a{padding:22px 22px 24px!important;gap:8px;min-height:200px;align-content:start}
+.strip .tp{margin-bottom:14px}
+.strip .meter{margin-top:14px}
+.sec{margin-top:32px}
+.grid2,.grid2e,.fov{gap:28px}
+.side{gap:28px}
+main section{padding:28px 30px}
+.sh{padding-bottom:18px;margin-bottom:10px}
+.sh h2{gap:12px;font-size:18px}
+.trow{padding:18px 0;gap:16px;grid-template-columns:62px 30px minmax(0,1fr) auto}
+.trow .when{padding:9px 0}
+.meta{margin-top:5px}
+.ev{padding:14px 0;gap:14px}
+.mrow{padding:16px 0;gap:8px 14px}
+.figs>div{padding:18px 16px 18px 0}.figs>div+div{padding-left:18px}
+.figs .k{margin-bottom:4px}
+.claude{padding:24px 26px}.claude .out{margin-top:14px;line-height:1.7}
+.hd{margin-bottom:32px;gap:20px}
+.mnav{margin-top:16px}
+.tabs{gap:24px}
+.tabs[style]{margin-bottom:32px!important}
+.tiles{gap:16px;margin-top:20px}
+.tile{padding:20px 18px 18px;gap:8px}
+.tile .ico{margin-bottom:8px}
+.tx{padding:14px 0;gap:16px}
+.dayh{padding:22px 0 10px}
+.idea{padding:22px 0;gap:16px}
+.dfv{margin-top:14px;gap:22px}
+.card{padding:28px 30px}
+.week .day{padding:14px 12px;min-height:180px}
+.blk{padding:10px 12px;margin-bottom:8px}
+.cklist{gap:0 32px}.ck{padding:12px 0}
+.heat{margin:20px 0 12px}
+.bars{margin-top:20px;height:170px}
+.minib{margin-top:20px;height:64px}
+.nav{gap:6px}.nav a{height:46px}
+.rail{padding:28px 16px;gap:30px}
+.railfoot{gap:10px}
+.sheet{padding:32px}.fld{margin-bottom:16px}.acts{margin-top:24px}
+td{padding:15px 10px 15px 0}th{padding:12px 10px 12px 0}
+.empty{padding:28px 0}
+@media(max-width:900px){.rail{padding:12px 16px}}
+@media(max-width:600px){main{padding:20px 16px 72px}.hero{padding:26px 22px;gap:24px}main section{padding:22px 20px}.strip{gap:14px}.strip a{min-height:170px;padding:18px!important}.trow{grid-template-columns:52px 28px minmax(0,1fr)}.grid2,.grid2e,.fov,.side{gap:20px}.top{margin-bottom:28px}}
+.strip{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+.strip a{min-height:178px}.strip .nx{font-size:14px}
+.strip .bgic{right:-6px!important;top:auto!important;bottom:-22px}.strip .bgic svg{width:130px;height:130px}
+@media(max-width:760px){.strip{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
