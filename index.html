@@ -311,6 +311,19 @@ background-image:radial-gradient(520px 320px at 105% -10%,rgba(229,72,45,.33),tr
 .strip.mini{grid-template-columns:repeat(4,minmax(0,1fr))}
 @media(max-width:1080px){.hero{grid-template-columns:1fr}}
 @media(max-width:600px){.hero{padding:22px;border-radius:16px}.hk .n{font-size:26px}.hk>div{padding:12px}.focus{grid-template-columns:auto minmax(0,1fr)}.focus .btn{grid-column:1/-1}main section{padding:16px}.ph{width:40px;height:40px}}
+/* filled colour cards */
+.strip a{background:var(--cc)!important;border-color:transparent!important;color:#fff;box-shadow:0 8px 22px color-mix(in srgb,var(--cc) 28%,transparent)}
+.strip a:hover{box-shadow:0 12px 30px color-mix(in srgb,var(--cc) 40%,transparent)}
+.strip .lbl,.strip .lbl b{color:#fff}.strip .nx{color:rgba(255,255,255,.82)}
+.strip .it{background:rgba(255,255,255,.2);color:#fff}
+.strip .go{color:rgba(255,255,255,.85)}
+.strip .meter{background:rgba(255,255,255,.25)}.strip .meter i{background:#fff!important}
+.tile{background:var(--cc);color:#fff;box-shadow:0 6px 16px color-mix(in srgb,var(--cc) 25%,transparent)}
+.tile:hover{outline:0;box-shadow:0 10px 24px color-mix(in srgb,var(--cc) 38%,transparent)}
+.tile .ico{background:rgba(255,255,255,.22)}
+.tile .nm,.tile .bud{color:rgba(255,255,255,.88)}
+.tile .meter{background:rgba(255,255,255,.28)}.tile .meter i{background:#fff!important}
+.tile .meter.over i{background:#fff!important}.tile .meter.over{background:rgba(0,0,0,.25)}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -511,7 +524,7 @@ const strip=['academics','business','leadership','finance','ideas','growth'].map
 if(a==='finance'){big=short(Math.abs(f.net));nx=(f.net<0?'Net loss':'Net')+' this month · GH₵';const B=S.budgets.reduce((x,b)=>x+(+b.limit||0),0);pct=B?f.exp/B*100:0}
 else if(a==='ideas'){const top=rankedIdeas()[0];big=S.ideas.filter(i=>i.stage!=='Parked').length;nx=top?'Top: '+esc(top.title):'No ideas yet';pct=S.ideas.length?S.ideas.filter(i=>i.d&&i.f&&i.v).length/S.ideas.length*100:0}
 else{const o=open(a).sort(byDue);const dn=S.tasks.filter(t=>t.area===a&&t.done).length;big=o.length;nx=o[0]?'Next: '+esc(o[0].title):'All clear';pct=o.length+dn?dn/(o.length+dn)*100:0}
-return`<a href="#${a}"><span class="tp">${it(a,'var(--c-'+a+')')}<span class="go">→</span></span><span class="lbl"><b>${AREAS[a]}</b></span><span class="big">${big}</span><span class="nx">${nx}</span>${meter(pct,'var(--c-'+a+')')}</a>`}).join('');
+return`<a href="#${a}" style="--cc:var(--c-${a})"><span class="tp">${it(a,'var(--c-'+a+')')}<span class="go">→</span></span><span class="lbl"><b>${AREAS[a]}</b></span><span class="big">${big}</span><span class="nx">${nx}</span>${meter(pct,'var(--c-'+a+')')}</a>`}).join('');
 const days14=Array.from({length:14},(_,i)=>{const s=plus(i-13);return S.txns.filter(t=>t.date===s&&t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0)});const mx=Math.max(1,...days14);
 const cs=Object.values(S.cs50).filter(Boolean).length/CS50.length;const C2=2*Math.PI*20;
 return`<div class="hero"><svg class="wm" viewBox="0 0 32 32" aria-hidden="true"><rect x="3" y="3" width="7" height="26" fill="#fff"/><rect x="22" y="3" width="7" height="26" fill="#fff"/><path d="M10 3h4.6L22 20.5V29h-4.6L10 11.5z" fill="#fff"/></svg>
