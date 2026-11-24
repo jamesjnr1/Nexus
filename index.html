@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* VOICE: calm operating system for a busy student-founder; quiet, precise, confident.
    IDEA: a well-ruled personal ledger / control room: every responsibility on one sheet.
@@ -530,6 +530,139 @@ main section,.hero,.hero2{background:#111417!important;border:1px solid rgba(255
 .btn{box-shadow:none}
 .trow .when{background:rgba(255,255,255,.04)}
 .ov{-webkit-backdrop-filter:none;backdrop-filter:none}
+/* ===== v7: unslop pass (graphite ramp, one vermilion accent) =====
+   Unslop method by Damir Sokolovsky (@heydamir), CC BY 4.0 */
+:root,:root[data-theme=light],:root[data-theme=dark]{--bg:#141415;--side:#0f0f10;--card:#19191b;--raised:#232325;--panel:#232325;--line:rgba(237,237,237,.08);--ink:#ededed;--mute:#a1a1a6;--soft:#85858b;--ok:#4cc38a;--neg:#e5484d;--accent:#ff5a3d;--ease:cubic-bezier(.22,1,.36,1);--mono:"Geist Mono",ui-monospace,monospace}
+body{background:var(--bg)!important;font-size:15px}
+/* type: weights 400-500, hierarchy from size */
+h1,h2,h3,b,strong,.big,.big2,.v,.n,.amt,.score,.bigclock,.when b,.av b,.tt,.btn,.add,.strip .big,.figs .v{font-weight:500!important}
+h1{font-size:32px;letter-spacing:-.02em}h2,.sh h2{font-size:16px;letter-spacing:0}
+.tt{font-weight:400!important}
+.note,.meta,.k,.figs .k,.tg,.axis,.wk span,.wk b,.nav a .n,.olg,.status,.when span,.av,.r,.mrow .r,.leg .r,kbd,.dayp .dl,.palfoot,.pg{letter-spacing:0}
+.nav a .n,.tg span:last-child,.axis,.wk b,.when span,.dayp .dl span:last-child,.olg,.score small,kbd,.rank{font-family:var(--mono);font-size:12px}
+.k,.figs .k{font-weight:400!important;color:var(--mute);font-size:13px}
+.tg{font-weight:500;font-size:13px;color:var(--mute)}
+/* surfaces: graphite steps + hairlines, no shadows */
+.rail{background:var(--side)!important;border-right:1px solid var(--line)}
+main section,.hero,.hero2{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important;box-shadow:none!important}
+.hero,.hero2{border-radius:20px!important}
+.cap,.kbtn{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:10px!important;box-shadow:none!important}
+.cap input{height:44px}.seg button{height:44px}.kbtn{height:46px}
+.sheet,.palbox{background:var(--card)!important;border:1px solid var(--line)!important;border-radius:16px!important}
+.fld input,.fld select,.fld textarea,select.inl{background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:8px!important}
+.toast{background:var(--raised)!important;border-radius:10px!important}
+/* buttons */
+.btn{background:var(--ink)!important;color:#141415!important;border:0!important;border-radius:8px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.12)!important;height:40px;padding:0 16px;transition:background-color .15s var(--ease),transform .15s var(--ease)}
+.btn:active{transform:scale(.98)}
+.btn.ghost,.add{background:var(--raised)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:8px!important}
+.btn.sm{height:32px;padding:0 12px}
+.add{height:32px;padding:0 12px;font-size:13px}
+.add:hover,.btn.ghost:hover{background:#2a2a2d!important}
+.ic,.stat{border-radius:8px}
+.chk{border-radius:4px!important}
+kbd{background:var(--raised);border:1px solid var(--line);border-radius:4px;padding:0 4px}
+/* navigation: dense, icons in text colour */
+.rail{padding:24px 16px!important;gap:24px!important}
+.nav{gap:2px!important}
+.nav a{height:36px!important;padding:0 8px!important;gap:10px!important;border-radius:8px!important;color:var(--mute)!important;font-size:14px;transition:background-color .15s var(--ease),color .15s var(--ease)}
+.nav a:hover{background:var(--card)!important;color:var(--ink)!important}
+.nav .ni{width:20px!important;height:20px!important;background:none!important;color:inherit!important;box-shadow:none!important}
+.nav a[aria-current=page]{background:var(--raised)!important;color:var(--ink)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.06)!important}
+.nav a[aria-current=page] .ni{background:none!important;color:var(--ink)!important}
+.railfoot{gap:8px!important}
+/* icons: one size, text colour */
+.it{background:none!important;color:var(--mute)!important;width:20px!important;height:20px!important}
+.it svg{width:18px;height:18px}
+.ph{width:auto!important;height:auto!important;margin-right:12px!important;top:-2px!important}.ph svg{width:24px;height:24px}
+.focus .it{background:var(--accent)!important;color:#141415!important;width:32px!important;height:32px!important;border-radius:8px}
+.emptyc .it{width:24px!important;height:24px!important}
+.ai{color:var(--soft)!important}
+.dot,.sw{border-radius:50%!important}
+/* spacing on the 4px grid */
+main{padding:32px 32px 96px!important;max-width:1520px}
+.top{margin-bottom:32px!important;gap:12px!important}
+.hero,.hero2{padding:48px!important;gap:40px!important;margin-bottom:24px!important;min-height:0!important}
+.sec{margin-top:24px!important}
+.grid2,.grid2e,.fov{gap:24px!important}.side{gap:24px!important}
+main section{padding:24px 28px!important}
+.sh{padding-bottom:16px!important;margin-bottom:8px!important}
+.tl{padding:12px 0!important;gap:12px!important}
+.tg{padding:16px 0 4px!important}
+.trow{padding:16px 0!important;gap:16px!important}
+.ev{padding:12px 0!important;gap:12px!important}
+.mrow{padding:12px 0!important}
+.figs>div{padding:16px 16px 16px 0!important}.figs>div+div{padding-left:16px!important}
+.tiles{gap:12px!important;margin-top:16px!important}
+.tx{padding:12px 0!important;gap:12px!important}
+.idea{padding:20px 0!important}
+.claude{padding:24px!important;background:var(--raised)!important;border:1px solid var(--line)!important;border-radius:12px!important}
+.focus{padding:16px 20px!important;margin-top:24px!important;border-radius:12px!important;background:var(--raised)!important;border:1px solid var(--line)!important}
+.hd{margin-bottom:32px!important}
+/* hero: date as title, clock as the instrument */
+.bigclock{font-family:var(--mono);font-weight:500!important;font-size:clamp(64px,7.2vw,104px)!important;letter-spacing:-.04em!important;color:var(--ink)!important;margin:12px 0 16px!important}
+.bigclock small{font-size:.34em!important;color:var(--soft)!important;letter-spacing:0!important}
+.hero2 h1{font-size:28px!important;color:var(--ink)!important;letter-spacing:-.01em!important}
+.hero2 .sub{font-size:15px!important;color:var(--mute)!important;margin-top:8px!important}
+.hero .eyebrow{color:var(--mute)!important;font-size:13px!important;margin-bottom:0!important}
+#nextup{color:var(--ink)!important}
+.dayp .bar{position:relative;overflow:visible!important;height:4px!important;background:var(--raised)!important;border-radius:2px!important}
+.dayp i{background:#5a5a5f!important;border-radius:2px!important}
+.dayp .now{position:absolute;top:-4px;width:2px;height:12px;background:var(--accent);border-radius:1px;transform:translateX(-1px)}
+/* areas: one instrument row, numbers only, colour as a dot */
+.atiles{display:grid!important;grid-template-columns:repeat(6,minmax(0,1fr))!important;gap:0!important;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.at{display:grid!important;gap:8px!important;align-content:start;padding:20px 24px!important;border-radius:0!important;background:none!important;box-shadow:none!important;color:var(--ink)!important;border-left:1px solid var(--line);transition:background-color .15s var(--ease)!important}
+.at:first-child{border-left:0}
+.at:hover{background:var(--raised)!important;transform:none!important;filter:none!important}
+.at .an{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--mute);opacity:1!important;font-weight:400}
+.at .an i{width:8px;height:8px;border-radius:50%;flex:none}
+.at .av{font-size:13px;color:var(--soft);opacity:1!important}
+.at .av b{font-size:28px!important;color:var(--ink);letter-spacing:-.02em}
+.at .ax{font-size:13px;color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+/* timeline */
+.tl .dot{width:8px!important;height:8px!important}
+.tlist::before{background:var(--line)!important}
+.tg.late{color:var(--accent)!important}
+.tg.late+.tlist .dot{background:var(--accent)!important}
+.hi{color:var(--accent)!important;font-weight:400!important}
+.trow .when{background:var(--raised)!important;border-radius:8px!important}
+.trow .when.late{background:rgba(255,90,61,.12)!important}
+/* charts: neutral steps, accent only on now */
+.wk .wb{background:none!important}
+.wk .wb i{background:#3a3a3e!important;border-radius:2px 2px 0 0!important}
+.wk .on .wb i{background:var(--accent)!important}
+.wk .on span{color:var(--ink)!important}
+.bars i{background:#3a3a3e!important;border-radius:2px 2px 0 0!important}
+.bars i.t{background:var(--accent)!important}
+.meter{background:var(--raised)!important;height:4px!important;border-radius:2px!important}
+.meter i{background:#8a8a90!important;border-radius:2px}
+.meter.over i{background:var(--neg)!important}
+/* finance tiles: raised surface, category as a dot */
+.tile{background:var(--raised)!important;color:var(--ink)!important;border:1px solid var(--line)!important;border-radius:12px!important;box-shadow:none!important;padding:16px!important;gap:8px!important;transition:background-color .15s var(--ease)!important}
+.tile:hover{background:#2a2a2d!important;filter:none!important;transform:none!important}
+.tile .ico{display:none!important}
+.tile .nm{color:var(--mute)!important;display:flex;align-items:center;gap:8px}
+.tile .nm::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--cc);flex:none}
+.tile .amt{font-size:20px}
+.tile .bud{color:var(--soft)!important}
+.tile .meter{background:rgba(237,237,237,.08)!important}
+.tx .ico{background:var(--raised)!important;color:var(--mute)!important;border-radius:8px!important;width:32px;height:32px}
+.cal{border-color:var(--line)!important}
+.cal button.sel{background:var(--raised)!important;box-shadow:inset 0 0 0 1px var(--line)}
+.cal button.td .dn{color:var(--accent)!important}
+/* ideas */
+.dots button{border-radius:4px!important;border-color:#4a4a4f!important}
+.dots button.on{background:var(--ink)!important;border-color:var(--ink)!important}
+.rank{color:var(--soft)!important}
+/* motion: one entrance, nothing loops except the live clock */
+.flow,.spin{animation:none!important}
+.view{animation:in .4s var(--ease)!important}
+@keyframes in{from{opacity:0;transform:translateY(8px)}}
+@media(max-width:1200px){.atiles{grid-template-columns:repeat(3,minmax(0,1fr))!important}.at:nth-child(4){border-left:0}.at:nth-child(n+4){border-top:1px solid var(--line)}}
+@media(max-width:600px){main{padding:16px 16px 72px!important}.hero,.hero2{padding:24px!important;gap:24px!important}main section{padding:20px!important}
+.atiles{grid-template-columns:repeat(2,minmax(0,1fr))!important}.at{padding:16px!important;border-left:0;border-top:1px solid var(--line)}.at:nth-child(even){border-left:1px solid var(--line)}.at:nth-child(-n+2){border-top:0}.bigclock{font-size:64px!important}}
+.tile .meter i{background:#8a8a90!important}.tile .meter.over i{background:var(--neg)!important}
+.bigclock{letter-spacing:-.07em!important}.bigclock small{margin-left:12px!important}
+.o{font-weight:500}.i{font-weight:500}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -550,7 +683,7 @@ main section,.hero,.hero2{background:#111417!important;border:1px solid rgba(255
   <main>
     <div class="top">
       <form class="cap" id="capf" autocomplete="off">
-        <input id="capin" placeholder="Capture anything… e.g. Pitch deck review tomorrow" aria-label="Quick capture">
+        <input id="capin" placeholder="Add a task, e.g. Pitch review tomorrow" aria-label="Quick capture">
         <div class="seg" role="group" aria-label="Capture as">
           <button type="button" data-k="task" aria-pressed="true">Task</button>
           <button type="button" data-k="idea" aria-pressed="false">Idea</button>
@@ -565,7 +698,7 @@ main section,.hero,.hero2{background:#111417!important;border:1px solid rgba(255
 </div>
 <datalist id="refs"></datalist>
 <div class="ov" id="modal" hidden></div>
-<div class="ov pal" id="pal" hidden><div class="palbox" role="dialog" aria-label="Command palette"><div class="palhead"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="palin" placeholder="Search tasks, ideas and money, or run a command" autocomplete="off"></div><div id="pallist"></div><div class="palfoot">↑ ↓ to move · Enter to open · Esc to close</div></div></div>
+<div class="ov pal" id="pal" hidden><div class="palbox" role="dialog" aria-label="Command palette"><div class="palhead"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="palin" placeholder="Search or run a command" autocomplete="off"></div><div id="pallist"></div><div class="palfoot">↑ ↓ to move · Enter to open · Esc to close</div></div></div>
 <div class="toast" id="toast" hidden><span id="toastmsg"></span><button id="undo" hidden>Undo</button></div>
 
 <script>
@@ -696,7 +829,7 @@ return `<li class="trow ${t.done?'done':''}"><div class="when ${late?'late':''}"
 <div><div class="tt">${esc(t.title)}</div><div class="meta">${showArea?sw(t.area)+AREAS[t.area]+(t.ref?' · ':''):''}${esc(t.ref||'')}${t.due?` · <span class="${late?'late':''}">${rel(t.due)}</span>`:''}${t.pri==='High'?' · <span class="hi">High</span>':''}</div></div>
 <div class="ra">${rowActs('task',t.id)}</div></li>`}
 const rowActs=(t,id)=>`<button class="ic" data-act="edit" data-t="${t}" data-id="${id}" aria-label="Edit">${ICON.edit}</button><button class="ic" data-act="del" data-t="${t}" data-id="${id}" aria-label="Delete">${ICON.del}</button>`;
-const taskList=(arr,showArea,empty='Nothing here. Enjoy the space.')=>arr.length?`<ul class="list">${arr.map(t=>taskRow(t,showArea)).join('')}</ul>`:`<p class="empty">${empty}</p>`;
+const taskList=(arr,showArea,empty='Nothing here')=>arr.length?`<ul class="list">${arr.map(t=>taskRow(t,showArea)).join('')}</ul>`:`<p class="empty">${empty}</p>`;
 const meter=(pct,col)=>`<div class="meter ${pct>100?'over':''}"><i style="width:${Math.min(100,Math.max(0,pct))}%;background:${col}"></i></div>`;
 const addBtn=(t,label,preset='')=>`<button class="add" data-act="add" data-t="${t}" ${preset}>${icon('plus',14)}${label}</button>`;
 const month=()=>today().slice(0,7);
@@ -713,9 +846,9 @@ function parseEvents(p){if(p&&Array.isArray(p.content)&&p.content[0]&&typeof p.c
 if(typeof p==='string'){try{return parseEvents(JSON.parse(p))}catch{return[]}}
 const arr=Array.isArray(p)?p:(p&&(p.events||p.items||(p.result&&p.result.events)))||[];
 return arr.map(e=>{const st=e.start||{};const s=(typeof st==='string'?st:(st.dateTime||st.date))||e.startTime||'';return{t:e.summary||e.title||'(No title)',s:String(s),all:!!(st.date&&!st.dateTime)}}).filter(e=>e.s)}
-function calBlock(){if(CAL.state==='off'||CAL.state==='error')return`<div class="emptyc">${it('calendar','#3b82f6')}<span>${CAL.state==='error'?'Couldn’t reach Google Calendar. Check the connection in Claude and reload.':'Your Google Calendar events show here once you allow access on claude.ai.'}</span></div>`;
-if(CAL.state==='loading')return'<p class="empty">Loading your calendar…</p>';
-if(!CAL.events.length)return`<div class="emptyc">${it('check','var(--ok)')}<span>Nothing on your calendar for the next 7 days.</span></div>`;
+function calBlock(){if(CAL.state==='off'||CAL.state==='error')return`<div class="emptyc">${it('calendar','#3b82f6')}<span>${CAL.state==='error'?'Couldn’t reach Google Calendar. Check the connection in Claude and reload.':'Google Calendar events appear here once you allow access on claude.ai'}</span></div>`;
+if(CAL.state==='loading')return'<p class="empty">Loading calendar</p>';
+if(!CAL.events.length)return`<div class="emptyc">${it('check','var(--ok)')}<span>Nothing on your calendar for the next 7 days</span></div>`;
 return CAL.events.slice(0,7).map(e=>{const d=new Date(e.s);const day=isNaN(d)?'':(iso(d)===today()?'Today':DAYS[d.getDay()]+' '+d.getDate());const tm=e.all||isNaN(d)?'All day':d.toLocaleTimeString('en-GB',{hour:'2-digit',minute:'2-digit'});return`<div class="ev"><div class="t">${esc(day)}<br>${esc(tm)}</div><div>${esc(e.t)}</div></div>`}).join('')}
 
 /* ---------- views ---------- */
@@ -733,25 +866,25 @@ const rows=[...es.map(evRow),...ts.slice(0,gi===3?4:8).map(tRow)];shown+=rows.le
 const week=Array.from({length:7},(_,i)=>{const ds=plus(i);return{ds,n:all.filter(t=>t.due===ds).length+(i===0?late.length:0)}});const wm=Math.max(1,...week.map(w=>w.n));
 const days14=Array.from({length:14},(_,i)=>{const s=plus(i-13);return S.txns.filter(t=>t.date===s&&t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0)});const mx=Math.max(1,...days14);
 const cs=Object.values(S.cs50).filter(Boolean).length/CS50.length;
-const tiles=['academics','business','leadership','finance','ideas','growth'].map(a=>{let n,l;if(a==='finance'){n=short(f.net);l='net'}else if(a==='ideas'){n=S.ideas.filter(i=>i.stage!=='Parked').length;l='active'}else{n=open(a).length;l='open'}
-return`<a href="#${a}" class="at" style="--cc:var(--c-${a})"><span class="it2">${icon(a,18)}</span><span class="atx"><span class="an">${AREAS[a]}</span><span class="av"><b class="${typeof n==='number'?'cu':''}" data-v="${n}">${n}</b> ${l}</span></span></a>`}).join('');
+const tiles=['academics','business','leadership','finance','ideas','growth'].map(a=>{let n,l,nx;if(a==='finance'){n=short(f.net);l='GH₵ net';nx=`In ${short(f.inc)} · out ${short(f.exp)}`}else if(a==='ideas'){n=S.ideas.filter(i=>i.stage!=='Parked').length;l='active';const t=rankedIdeas()[0];nx=t?esc(t.title):'No ideas yet'}else{const o=open(a).sort(byDue);n=o.length;l='open';nx=o[0]?esc(o[0].title):'All clear'}
+return`<a href="#${a}" class="at"><span class="an"><i style="background:var(--c-${a})"></i>${AREAS[a]}</span><span class="av"><b class="${typeof n==='number'?'cu':''}" data-v="${n}">${n}</b> ${l}</span><span class="ax">${nx}</span></a>`}).join('');
 return`<div class="hero hero2"><div class="hl">
-<div class="eyebrow"><span class="live"></span>Live · ${DAYS[now.getDay()]==='Sun'?'Sunday':['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]}, ${now.getDate()} ${['January','February','March','April','May','June','July','August','September','October','November','December'][now.getMonth()]}</div>
+<div class="eyebrow"><span class="live"></span>Today</div>
 <div class="bigclock" id="bigclock">${bigClock()}</div>
-<h1>${greet}, James.</h1>
+<h1>${['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'][now.getDay()]}, ${now.getDate()} ${['January','February','March','April','May','June','July','August','September','October','November','December'][now.getMonth()]}</h1>
 <p class="sub">${late.length?`<b style="color:#ff8a70">${late.length} overdue</b> · `:''}<b>${all.filter(t=>t.due&&diff(t.due)>=0&&diff(t.due)<7).length}</b> due this week · <span id="nextup">${nextUp()}</span></p>
-<div class="dayp"><div class="dl"><span>Day progress</span><span id="daypct">${dayPct()}%</span></div><div class="bar"><i id="daybar" style="width:${dayPct()}%"></i></div></div>
-${focus?`<div class="focus">${it('target')}<div><small>Focus now · ${AREAS[focus.area]}${focus.due?' · '+rel(focus.due):''}</small><b>${esc(focus.title)}</b></div><button class="btn sm" data-act="toggle" data-id="${focus.id}">${icon('check',15)}Done</button></div>`:`<div class="focus">${it('check','#3ddc97')}<div><small>Focus now</small><b>Nothing urgent. Nice.</b></div></div>`}
+<div class="dayp"><div class="dl"><span>Day progress</span><span id="daypct">${dayPct()}%</span></div><div class="bar"><i id="daybar" style="width:${dayPct()}%"></i><b class="now" id="daynow" style="left:${dayPct()}%"></b></div></div>
+${focus?`<div class="focus">${it('target')}<div><small>Focus now · ${AREAS[focus.area]}${focus.due?' · '+rel(focus.due):''}</small><b>${esc(focus.title)}</b></div><button class="btn sm" data-act="toggle" data-id="${focus.id}">${icon('check',15)}Done</button></div>`:`<div class="focus">${it('check','#3ddc97')}<div><small>Focus now</small><b>Nothing urgent</b></div></div>`}
 </div><div class="orbit"><svg data-draw="orbit" role="img" aria-label="Map of your six areas and their open items"></svg><div class="olg">Live map · tap an area</div></div></div>
 <div class="atiles">${tiles}</div>
 <div class="grid2 sec"><section><div class="sh"><h2>Today &amp; next</h2><div style="display:flex;gap:10px">${addBtn('task','Task')}${sample?`<button class="add" data-act="plan">${icon('spark',14)}${busy.plan?'Planning…':'Plan week'}</button>`:''}</div></div>
-${tl||`<div class="emptyc">${it('check','var(--ok)')}<span>Nothing due this week. Enjoy the space.</span></div>`}
+${tl||`<div class="emptyc">${it('check','var(--ok)')}<span>Nothing due this week</span></div>`}
 ${S.plan&&sample?`<div class="claude" style="margin-top:22px"><h3>${it('spark','var(--c-ideas)')}Your week, planned by Claude</h3><div class="out" id="planout">${esc(S.plan.text)}</div></div>`:busy.plan?`<div class="claude" style="margin-top:22px"><div class="out" id="planout"></div></div>`:''}
 ${starterNote('tasks')}</section>
 <aside class="side">
 <section><div class="sh"><h2>This week</h2><span class="note">Deadlines per day</span></div><div class="wk">${week.map((w,i)=>{const d=pd(w.ds);return`<div class="${i===0?'on':''}"><div class="wb"><i style="height:${w.n?Math.max(10,w.n/wm*100):3}%"></i></div><b>${w.n||''}</b><span>${i===0?'Today':DAYS[d.getDay()]}</span></div>`}).join('')}</div></section>
 <section><div class="sh"><h2>Money</h2><a class="note" href="#finance">Open →</a></div><div class="mline"><div><span class="k">Net this month</span><span class="big2 ${f.net<0?'neg':''}">${money(f.net)}</span></div><div class="r2"><span class="i">+${short(f.inc)}</span><span class="o">−${short(f.exp)}</span></div></div>
-<div class="minib" title="Spending, last 14 days">${days14.map((v,i)=>`<i style="height:${v?Math.max(6,v/mx*100):3}%;${i===13?'background:var(--accent)':''}"></i>`).join('')}</div><div class="axis"><span>Spending, last 14 days</span><span>Today</span></div></section>
+</section>
 <section><div class="sh"><h2>Growth</h2><a class="note" href="#growth">Open →</a></div>
 <div class="gline"><div><span class="k">CS50W</span>${meter(cs*100,'var(--c-growth)')}<span class="meta">${Math.round(cs*100)}% complete</span></div><div><span class="k">Streak</span><span class="big2">${streak()}<small> days</small></span></div></div></section>
 ${CAL.state==='on'&&!evs.length?'':CAL.state!=='on'?`<section><div class="sh"><h2>Calendar</h2></div>${calBlock()}</section>`:''}
@@ -759,10 +892,10 @@ ${CAL.state==='on'&&!evs.length?'':CAL.state!=='on'?`<section><div class="sh"><h
 
 V.academics=()=>{const ts=open('academics').sort(byDue);const todayD=DAYS[new Date().getDay()];
 return`<div class="hd"><div><h1>${ph('academics')}Academics</h1><p class="sub"><b>${ts.length}</b> open assignments across <b>${S.courses.length}</b> courses</p></div>${addBtn('task','New assignment','data-p="academics"')}</div>
-<div class="grid2"><section><div class="sh"><h2>Assignments & deadlines</h2></div>${taskList(ts,false,'No open assignments.')}
+<div class="grid2"><section><div class="sh"><h2>Assignments & deadlines</h2></div>${taskList(ts,false,'No open assignments')}
 ${S.tasks.some(t=>t.area==='academics'&&t.done)?`<button class="add" data-act="cleardone" data-a="academics">Clear completed</button>`:''}</section>
 <section><div class="sh"><h2>Courses</h2>${addBtn('course','Course')}</div>
-${S.courses.length?`<table class="stack"><thead><tr><th>Course</th><th>Focus</th><th class="num">Open</th><th></th></tr></thead><tbody>${S.courses.map(c=>`<tr><td><b>${esc(c.name)}</b>${c.when?`<div class="meta">${esc(c.when)}</div>`:''}</td><td>${esc(c.code)}${c.target?`<div class="meta">Target ${esc(c.target)}</div>`:''}</td><td class="num">${open('academics').filter(t=>t.ref===c.name).length}</td><td><div class="ra">${rowActs('course',c.id)}</div></td></tr>`).join('')}</tbody></table>`:'<p class="empty">Add this semester’s courses.</p>'}
+${S.courses.length?`<table class="stack"><thead><tr><th>Course</th><th>Focus</th><th class="num">Open</th><th></th></tr></thead><tbody>${S.courses.map(c=>`<tr><td><b>${esc(c.name)}</b>${c.when?`<div class="meta">${esc(c.when)}</div>`:''}</td><td>${esc(c.code)}${c.target?`<div class="meta">Target ${esc(c.target)}</div>`:''}</td><td class="num">${open('academics').filter(t=>t.ref===c.name).length}</td><td><div class="ra">${rowActs('course',c.id)}</div></td></tr>`).join('')}</tbody></table>`:'<p class="empty">No courses yet</p>'}
 ${starterNote('courses')}</section></div>
 <section class="sec"><div class="sh"><h2>Study plan</h2>${addBtn('block','Study block')}</div>
 <div class="week">${['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].map(dy=>`<div class="day ${dy===todayD?'now':''}"><h4>${dy}${dy===todayD?' · today':''}</h4>${S.blocks.filter(b=>b.day===dy).sort((a,b)=>(a.time||'').localeCompare(b.time||'')).map(b=>`<button class="blk" data-act="edit" data-t="block" data-id="${b.id}"><b>${esc(b.time)} ${esc(b.course)}</b>${esc(b.focus)}</button>`).join('')}</div>`).join('')}</div>${starterNote('blocks')}</section>`};
@@ -771,15 +904,15 @@ V.business=()=>`<div class="hd"><div><h1>${ph('business')}Business</h1><p class=
 <div class="grid2e">${S.ventures.map(v=>{const ts=open('business').filter(t=>t.ref===v.name).sort(byDue);const inc=S.txns.filter(t=>t.type==='Income'&&t.project===v.name).reduce((a,t)=>a+(+t.amount||0),0);
 return`<section class="card"><div class="ch"><div><h2>${esc(v.name)}</h2><div class="meta">${esc(v.role)}</div></div><div style="display:flex;gap:8px;align-items:center"><span class="tag ${esc(v.status)}">${esc(v.status)}</span><div class="ra">${rowActs('venture',v.id)}</div></div></div>
 <p style="margin:10px 0 4px">${esc(v.focus)}</p><div class="meta">${/^https:\/\//.test(v.link||'')?`<a href="${esc(v.link)}" target="_blank" rel="noopener">${esc(v.link.replace('https://',''))}</a>`:''}${inc?`${v.link?' · ':''}${money(inc)} earned`:''}</div>
-${taskList(ts,false,'No open tasks.')}${addBtn('task','Task','data-p="business" data-r="'+esc(v.name)+'"')}</section>`}).join('')}</div>`;
+${taskList(ts,false,'No open tasks')}${addBtn('task','Task','data-p="business" data-r="'+esc(v.name)+'"')}</section>`}).join('')}</div>`;
 
 V.leadership=()=>{const up=S.meetings.filter(m=>diff(m.date)>=0).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));const past=S.meetings.filter(m=>diff(m.date)<0);const iss=[...S.issues].sort((a,b)=>(a.status==='Resolved')-(b.status==='Resolved'));
 const groups=[...new Set(open('leadership').map(t=>t.ref||'Other'))];
 return`<div class="hd"><div><h1>${ph('leadership')}Leadership</h1><p class="sub">Student Parliament · PR committee · Ascend campaign · <b>${S.issues.filter(i=>i.status!=='Resolved').length}</b> open constituent issues</p></div>${addBtn('task','New task','data-p="leadership"')}</div>
 <div class="grid2"><section><div class="sh"><h2>Constituent issues</h2>${addBtn('issue','Log issue')}</div>
-${iss.length?`<table class="stack"><thead><tr><th>Issue</th><th>Raised</th><th>Status</th><th></th></tr></thead><tbody>${iss.map(i=>`<tr><td><b>${esc(i.title)}</b>${i.notes?`<div class="meta">${esc(i.notes)}</div>`:''}</td><td>${esc(i.by)}<div class="meta">${i.date?rel(i.date).replace('in ','').replace(' late',' ago'):''}</div></td><td><button class="stat ${esc(i.status.replace(' ',''))}" data-act="cycle" data-id="${i.id}" title="Click to change status">${esc(i.status)}</button></td><td><div class="ra">${rowActs('issue',i.id)}</div></td></tr>`).join('')}</tbody></table>`:'<p class="empty">No issues logged. When a student raises something, log it here.</p>'}${starterNote('issues')}
-<div class="sec"><div class="sh"><h2>Responsibilities</h2></div>${groups.length?groups.map(g=>`<h3 style="margin:16px 0 0">${esc(g)}</h3>${taskList(open('leadership').filter(t=>(t.ref||'Other')===g).sort(byDue),false)}`).join(''):'<p class="empty">No open leadership tasks.</p>'}</div></section>
-<aside class="side"><section><div class="sh"><h2>Meetings</h2>${addBtn('meeting','Meeting')}</div>${up.length?up.map(m=>`<div class="ev"><div class="t">${m.date?esc(rel(m.date).split(',')[0]):''}<br>${esc(m.time||'')}</div><div><div class="ch"><div><b>${esc(m.title)}</b><div class="meta">${esc(m.group)}${m.place?' · '+esc(m.place):''}</div>${m.notes?`<div class="meta">${esc(m.notes)}</div>`:''}</div><div class="ra">${rowActs('meeting',m.id)}</div></div></div></div>`).join(''):'<p class="empty">No upcoming meetings.</p>'}
+${iss.length?`<table class="stack"><thead><tr><th>Issue</th><th>Raised</th><th>Status</th><th></th></tr></thead><tbody>${iss.map(i=>`<tr><td><b>${esc(i.title)}</b>${i.notes?`<div class="meta">${esc(i.notes)}</div>`:''}</td><td>${esc(i.by)}<div class="meta">${i.date?rel(i.date).replace('in ','').replace(' late',' ago'):''}</div></td><td><button class="stat ${esc(i.status.replace(' ',''))}" data-act="cycle" data-id="${i.id}" title="Click to change status">${esc(i.status)}</button></td><td><div class="ra">${rowActs('issue',i.id)}</div></td></tr>`).join('')}</tbody></table>`:'<p class="empty">No issues logged</p>'}${starterNote('issues')}
+<div class="sec"><div class="sh"><h2>Responsibilities</h2></div>${groups.length?groups.map(g=>`<h3 style="margin:16px 0 0">${esc(g)}</h3>${taskList(open('leadership').filter(t=>(t.ref||'Other')===g).sort(byDue),false)}`).join(''):'<p class="empty">No open leadership tasks</p>'}</div></section>
+<aside class="side"><section><div class="sh"><h2>Meetings</h2>${addBtn('meeting','Meeting')}</div>${up.length?up.map(m=>`<div class="ev"><div class="t">${m.date?esc(rel(m.date).split(',')[0]):''}<br>${esc(m.time||'')}</div><div><div class="ch"><div><b>${esc(m.title)}</b><div class="meta">${esc(m.group)}${m.place?' · '+esc(m.place):''}</div>${m.notes?`<div class="meta">${esc(m.notes)}</div>`:''}</div><div class="ra">${rowActs('meeting',m.id)}</div></div></div></div>`).join(''):'<p class="empty">No upcoming meetings</p>'}
 ${past.length?`<button class="add" data-act="clearpast">Clear ${past.length} past meeting${past.length>1?'s':''}</button>`:''}${starterNote('meetings')}</section>
 <section><div class="sh"><h2>Leadership goals</h2><a class="note" href="#growth">In Growth</a></div>${S.lgoals.map(g=>`<div class="mrow"><span>${esc(g.title)}</span><span class="r">${+g.progress||0}%</span>${meter(+g.progress||0,'var(--c-leadership)')}</div>`).join('')}</section></aside></div>`};
 
@@ -787,7 +920,7 @@ V.finance=()=>{const m=finM,f=fin(m),[y,mo]=m.split('-').map(Number),isCur=m===m
 const B=S.budgets.reduce((a,b)=>a+(+b.limit||0),0),rem=B-f.exp,left=isCur?dim-tD+1:0;
 const perDay=Array.from({length:dim},(_,i)=>{const ds=`${m}-${String(i+1).padStart(2,'0')}`;const tx=f.tx.filter(t=>t.date===ds);return{ds,o:tx.filter(t=>t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0),i:tx.filter(t=>t.type==='Income').reduce((a,t)=>a+(+t.amount||0),0)}});
 const mx=Math.max(1,...perDay.map(d=>d.o));const nz=perDay.filter(d=>d.o>0);const most=nz.length?Math.max(...nz.map(d=>d.o)):0,least=nz.length?Math.min(...nz.map(d=>d.o)):0;
-const head=`<div class="hd"><div><h1>${ph('finance')}Finance</h1><div class="mnav"><button class="ic" data-act="fm" data-d="-1" aria-label="Previous month">‹</button><b>${MON[mo-1]} ${y}</b><button class="ic" data-act="fm" data-d="1" aria-label="Next month">›</button><span style="margin-left:12px;font-size:15px"><span class="o">OUT ${money(f.exp)}</span>&nbsp;&nbsp;<span class="i">IN ${money(f.inc)}</span></span></div></div>
+const head=`<div class="hd"><div><h1>${ph('finance')}Finance</h1><div class="mnav"><button class="ic" data-act="fm" data-d="-1" aria-label="Previous month">‹</button><b>${MON[mo-1]} ${y}</b><button class="ic" data-act="fm" data-d="1" aria-label="Next month">›</button><span style="margin-left:12px;font-size:15px"><span class="o">Out ${money(f.exp)}</span>&nbsp;&nbsp;<span class="i">In ${money(f.inc)}</span></span></div></div>
 <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" data-act="add" data-t="txn" data-c="Project income">${icon('plus',15)}Income</button><button class="btn" data-act="add" data-t="txn" data-c="Food">${icon('plus',15)}Expense</button></div></div>
 <div class="tabs" style="margin-bottom:24px;border-bottom:1px solid var(--line)">${[['overview','Overview'],['calendar','Calendar'],['stats','Stats']].map(([k,l])=>`<button data-act="ftab" data-k="${k}" aria-pressed="${finTab===k}">${l}</button>`).join('')}</div>`;
 const tile=(c,inc)=>{const amt=f.tx.filter(t=>t.category===c[0]).reduce((a,t)=>a+(+t.amount||0),0);const b=S.budgets.find(x=>x.category===c[0]);
@@ -801,8 +934,8 @@ const segs=cats.map(([c,v])=>{const len=v/f.exp*C;const s=`<circle cx="100" cy="
 const big=[...f.tx].filter(t=>t.type==='Expense').sort((a,b)=>b.amount-a.amount).slice(0,5);
 return head+`<section><div class="sh"><h2>Trends</h2><span class="note"><span class="o">— Expense</span>&nbsp;&nbsp;<span class="i">— Income</span> · per day</span></div><div class="fig" style="min-height:260px"><svg data-draw="trend" role="img" aria-label="Daily income and expense"></svg></div></section>
 <div class="grid2e sec"><section><div class="sh"><h2>Categories</h2><span class="note">${money(f.exp)} spent</span></div>${cats.length?`<svg class="donut" viewBox="0 0 200 200" role="img" aria-label="Spending by category"><circle cx="100" cy="100" r="70" fill="none" stroke="var(--panel)" stroke-width="30"/>${segs}<text x="100" y="96" text-anchor="middle" font-size="13" fill="var(--mute)">Spent</text><text x="100" y="116" text-anchor="middle" font-size="17" font-weight="700" fill="var(--ink)">${esc(short(f.exp))}</text></svg>
-${cats.map(([c,v])=>`<div class="leg"><i style="background:${ccol(c)}"></i><span>${esc(c)}</span><span class="r">${Math.round(v/f.exp*100)}%</span><span class="r" style="color:var(--ink);font-weight:600">${money(v)}</span></div>`).join('')}`:'<p class="empty">No spending this month.</p>'}</section>
-<section><div class="sh"><h2>Biggest expenses</h2></div>${big.length?record(big,false):'<p class="empty">Nothing yet.</p>'}
+${cats.map(([c,v])=>`<div class="leg"><i style="background:${ccol(c)}"></i><span>${esc(c)}</span><span class="r">${Math.round(v/f.exp*100)}%</span><span class="r" style="color:var(--ink);font-weight:600">${money(v)}</span></div>`).join('')}`:'<p class="empty">No spending this month</p>'}</section>
+<section><div class="sh"><h2>Biggest expenses</h2></div>${big.length?record(big,false):'<p class="empty">No expenses yet</p>'}
 <div class="figs" style="margin-top:12px"><div><div class="k">Daily average</div><div class="v">${money(f.exp/(isCur?tD:dim))}</div></div><div><div class="k">Most in a day</div><div class="v">${money(most)}</div></div><div><div class="k">Savings rate</div><div class="v">${f.inc?Math.round(f.net/f.inc*100)+'%':'–'}</div></div></div></section></div>`}
 /* overview */
 const pct=B?Math.min(1,f.exp/B):0;const pt=a=>{const r=a*Math.PI/180;return(100+78*Math.cos(r)).toFixed(1)+' '+(100+78*Math.sin(r)).toFixed(1)};const arc=(a0,a1)=>`M${pt(a0)} A78 78 0 ${a1-a0>180?1:0} 1 ${pt(a1)}`;
@@ -815,14 +948,14 @@ return head+`<div class="fov"><section class="gauge"><div class="sh"><h2>Budget<
 <section class="sec"><div class="sh"><h2>Spending</h2><span class="note">Tap a category to log fast</span></div><div class="tiles">${EXP.map(c=>tile(c)).join('')}</div></section>
 <section class="sec"><div class="sh"><h2>Income</h2><span class="note"><span class="i">${money(f.inc)}</span> this month</span></div><div class="tiles">${INC.map(c=>tile(c,1)).join('')}</div></section>
 <div class="grid2 sec"><section><div class="sh"><h2>Records</h2><span class="note">${f.tx.length} this month</span></div>${record(f.tx)}${starterNote('txns')}</section>
-<aside class="side"><section><div class="sh"><h2>Budgets</h2>${addBtn('budget','Budget')}</div>${S.budgets.length?S.budgets.map(b=>{const sp=f.byCat[b.category]||0;const p=b.limit?sp/b.limit*100:0;return`<div class="mrow"><span><i class="sw" style="background:${ccol(b.category)}"></i>${esc(b.category)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('budget',b.id)}</span></span><span class="r" style="${p>100?'color:var(--accent)':''}">${money(sp)} / ${money(+b.limit||0)}</span>${meter(p,ccol(b.category))}</div>`}).join(''):'<p class="empty">Set a monthly limit per category.</p>'}</section>
-<section><div class="sh"><h2>Savings goals</h2>${addBtn('goal','Goal')}</div>${S.goals.length?S.goals.map(g=>`<div class="mrow"><span>${esc(g.name)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('goal',g.id)}</span></span><span class="r">${money(+g.saved||0)} / ${money(+g.target||0)}</span>${meter(g.target?g.saved/g.target*100:0,'var(--ok)')}</div>`).join('')+`<p class="meta">Total saved: ${money(gs)}</p>`:'<p class="empty">Add something to save toward.</p>'}</section></aside></div>`};
-function record(list,group=true){if(!list.length)return'<p class="empty">No records yet. Tap a category tile to log one.</p>';
+<aside class="side"><section><div class="sh"><h2>Budgets</h2>${addBtn('budget','Budget')}</div>${S.budgets.length?S.budgets.map(b=>{const sp=f.byCat[b.category]||0;const p=b.limit?sp/b.limit*100:0;return`<div class="mrow"><span><i class="sw" style="background:${ccol(b.category)}"></i>${esc(b.category)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('budget',b.id)}</span></span><span class="r" style="${p>100?'color:var(--accent)':''}">${money(sp)} / ${money(+b.limit||0)}</span>${meter(p,ccol(b.category))}</div>`}).join(''):'<p class="empty">No budgets yet</p>'}</section>
+<section><div class="sh"><h2>Savings goals</h2>${addBtn('goal','Goal')}</div>${S.goals.length?S.goals.map(g=>`<div class="mrow"><span>${esc(g.name)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('goal',g.id)}</span></span><span class="r">${money(+g.saved||0)} / ${money(+g.target||0)}</span>${meter(g.target?g.saved/g.target*100:0,'var(--ok)')}</div>`).join('')+`<p class="meta">Total saved: ${money(gs)}</p>`:'<p class="empty">No savings goals yet</p>'}</section></aside></div>`};
+function record(list,group=true){if(!list.length)return'<p class="empty">No records this month</p>';
 const row=t=>`<div class="tx"><span class="ico" style="background:${ccol(t.category)}">${ico(t.category,17)}</span><div><div class="tt">${esc(t.label)}</div><div class="meta">${esc(t.category)}${t.project?' · '+esc(t.project):''}${group?'':' · '+pd(t.date).getDate()+' '+MON[pd(t.date).getMonth()]}</div></div><span class="amt ${t.type==='Income'?'i':'o'}">${t.type==='Income'?'+':'−'}${money(+t.amount||0)}</span><div class="ra">${rowActs('txn',t.id)}</div></div>`;
 if(!group)return list.map(row).join('');
 const by={};[...list].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).forEach(t=>(by[t.date]=by[t.date]||[]).push(t));
 return Object.entries(by).map(([d,ts])=>{const o=ts.filter(t=>t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0),i=ts.filter(t=>t.type==='Income').reduce((a,t)=>a+(+t.amount||0),0);const dd=pd(d);
-return`<div class="dayh"><span>${DAYS[dd.getDay()]}, ${dd.getDate()} ${MON[dd.getMonth()]}</span><span>${i?`<span class="i">IN ${money(i)}</span> `:''}${o?`<span class="o">OUT ${money(o)}</span>`:''}</span></div>${ts.map(row).join('')}`}).join('')}
+return`<div class="dayh"><span>${DAYS[dd.getDay()]}, ${dd.getDate()} ${MON[dd.getMonth()]}</span><span>${i?`<span class="i">In ${money(i)}</span> `:''}${o?`<span class="o">Out ${money(o)}</span>`:''}</span></div>${ts.map(row).join('')}`}).join('')}
 const DRAW={trend(s){const W=s.clientWidth,H=s.clientHeight;if(!W)return;const m=finM,[y,mo]=m.split('-').map(Number),dim=new Date(y,mo,0).getDate();const f=fin(m);
 const o=Array(dim).fill(0),n=Array(dim).fill(0);f.tx.forEach(t=>{const d=+t.date.slice(8)-1;if(t.type==='Income')n[d]+=+t.amount||0;else o[d]+=+t.amount||0});
 const mx=Math.max(10,...o,...n),pl=44,pb=26,x=i=>pl+i/(dim-1)*(W-pl-10),yy=v=>H-pb-v/mx*(H-pb-12);const ln=(a,c)=>`<polyline fill="none" stroke="${c}" stroke-width="2" stroke-linejoin="round" points="${a.map((v,i)=>x(i).toFixed(1)+','+yy(v).toFixed(1)).join(' ')}"/>`;
@@ -839,8 +972,8 @@ ${list.length?list.map((i,n)=>`<div class="idea"><div class="rank">${n+1}</div><
 <select class="inl" data-act="stage" data-id="${i.id}" aria-label="Stage">${['Seed','Exploring','Testing','Building','Parked'].map(s=>`<option ${s===i.stage?'selected':''}>${s}</option>`).join('')}</select>
 ${sample?`<button class="btn sm ghost" data-act="develop" data-id="${i.id}" ${busy[i.id]?'disabled':''}>${busy[i.id]?'Thinking…':i.dev?'Develop again':'Develop with Claude'}</button>`:''}</div>
 ${i.dev?`<div class="claude"><div class="out" id="dev-${i.id}">${esc(i.dev)}</div></div>`:busy[i.id]?`<div class="claude"><div class="out" id="dev-${i.id}"></div></div>`:''}</div>
-<div><div class="score">${ideaScore(i)||'–'}<small>of 15</small></div><div class="ra" style="justify-content:flex-end">${rowActs('idea',i.id)}</div></div></div>`).join(''):'<p class="empty">Capture your first idea from the bar above.</p>'}</section>
-<aside class="side"><section><div class="sh"><h2>Opportunity map</h2><span class="note">Size = viability</span></div>${scored.length?`<div class="fig" id="ideafig"><svg data-draw="ideas" role="img" aria-label="Ideas plotted by feasibility and desirability"></svg></div>`:'<p class="empty">Score an idea on all three to place it on the map.</p>'}</section></aside></div>`};
+<div><div class="score">${ideaScore(i)||'–'}<small>of 15</small></div><div class="ra" style="justify-content:flex-end">${rowActs('idea',i.id)}</div></div></div>`).join(''):'<p class="empty">No ideas yet</p>'}</section>
+<aside class="side"><section><div class="sh"><h2>Opportunity map</h2><span class="note">Size = viability</span></div>${scored.length?`<div class="fig" id="ideafig"><svg data-draw="ideas" role="img" aria-label="Ideas plotted by feasibility and desirability"></svg></div>`:'<p class="empty">Score an idea on D, F and V to place it here</p>'}</section></aside></div>`};
 
 V.growth=()=>{const cd=Object.values(S.cs50).filter(Boolean).length;const wk=S.practice.filter(p=>diff(p.date)>-7&&diff(p.date)<=0).reduce((a,p)=>a+(+p.minutes||0),0);
 const start=new Date();start.setDate(start.getDate()-start.getDay()-77);const mins={};S.practice.forEach(p=>mins[p.date]=(mins[p.date]||0)+(+p.minutes||0));
@@ -850,7 +983,7 @@ return`<div class="hd"><div><h1>${ph('growth')}Personal development</h1><p class
 <div class="cklist" style="margin-top:8px">${CS50.map((c,n)=>`<button class="ck ${S.cs50[n]?'done':''}" data-act="cs50" data-n="${n}"><span class="chk">${ICON.check}</span><span>${c}</span></button>`).join('')}</div>
 <div class="sec"><div class="sh"><h2>Programming practice</h2><span class="note">${streak()}-day streak · ${wk} min this week</span></div><div class="heat" aria-label="Practice over the last 12 weeks">${cells}</div>
 ${S.practice.length?`<ul class="list">${[...S.practice].sort((a,b)=>b.date.localeCompare(a.date)).slice(0,6).map(p=>`<li class="trow" style="grid-template-columns:56px minmax(0,1fr) auto"><div class="when"><b>${pd(p.date).getDate()}</b><span>${MON[pd(p.date).getMonth()]}</span></div><div><div class="tt">${esc(p.topic)}</div><div class="meta">${+p.minutes||0} minutes</div></div><div class="ra">${rowActs('practice',p.id)}</div></li>`).join('')}</ul>`:'<p class="empty">Log a session after you code. Even 20 minutes keeps the streak alive.</p>'}</div></section>
-<aside class="side"><section><div class="sh"><h2>Reading</h2>${addBtn('book','Book')}</div>${S.books.map(b=>`<div class="mrow"><span><b>${esc(b.title)}</b> <span class="meta">${esc(b.author)} · ${esc(b.status)}</span> <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('book',b.id)}</span></span><span class="r">${+b.progress||0}%</span>${meter(+b.progress||0,'var(--c-growth)')}</div>`).join('')||'<p class="empty">What are you reading?</p>'}</section>
+<aside class="side"><section><div class="sh"><h2>Reading</h2>${addBtn('book','Book')}</div>${S.books.map(b=>`<div class="mrow"><span><b>${esc(b.title)}</b> <span class="meta">${esc(b.author)} · ${esc(b.status)}</span> <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('book',b.id)}</span></span><span class="r">${+b.progress||0}%</span>${meter(+b.progress||0,'var(--c-growth)')}</div>`).join('')||'<p class="empty">No books yet</p>'}</section>
 <section><div class="sh"><h2>Leadership goals</h2>${addBtn('lgoal','Goal')}</div>${S.lgoals.map(g=>`<div class="mrow"><span><b>${esc(g.title)}</b>${g.why?`<div class="meta">${esc(g.why)}</div>`:''}<span class="ra" style="display:inline-flex">${rowActs('lgoal',g.id)}</span></span><span class="r">${+g.progress||0}%</span>${meter(+g.progress||0,'var(--c-leadership)')}</div>`).join('')}</section></aside></div>`};
 
 /* ---------- render ---------- */
@@ -926,7 +1059,7 @@ if(a==='pal'){palOpen();return}
 if(a==='add'){const pre={};if(b.dataset.p)pre.area=b.dataset.p;if(b.dataset.r)pre.ref=b.dataset.r;if(b.dataset.c){pre.category=b.dataset.c;pre.type=isInc(b.dataset.c)?'Income':'Expense'}if(b.dataset.dt)pre.date=b.dataset.dt;openForm(b.dataset.t,null,pre);return}
 if(a==='edit'){openForm(b.dataset.t,id);return}
 if(a==='del'){const sp=F[b.dataset.t];const arr=S[sp.c];const ix=arr.findIndex(x=>x.id===id);if(ix<0)return;const [it]=arr.splice(ix,1);commit();toast(`Deleted ${sp.n}`,()=>arr.splice(ix,0,it));return}
-if(a==='toggle'){const t=S.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;t.doneAt=t.done?today():'';commit();if(t.done)toast('Done. Nice work.',()=>{t.done=false});return}
+if(a==='toggle'){const t=S.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;t.doneAt=t.done?today():'';commit();if(t.done)toast('Marked done',()=>{t.done=false});return}
 if(a==='fm'){const[y,mo]=finM.split('-').map(Number);const d=new Date(y,mo-1+(+b.dataset.d),1);finM=iso(d).slice(0,7);finDay=null;render();return}
 if(a==='ftab'){finTab=b.dataset.k;render();return}
 if(a==='fday'){finDay=finDay===b.dataset.d?null:b.dataset.d;render();return}
@@ -946,7 +1079,7 @@ window.addEventListener('hashchange',()=>{render();window.scrollTo(0,0)});
 
 /* quick capture */
 let capKind='task';
-document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{capKind=b.dataset.k;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#capin').placeholder=capKind==='task'?'Capture anything… e.g. Pitch deck review tomorrow':capKind==='idea'?'An idea worth keeping…':'e.g. 45 lunch  or  120 data bundle';$('#capin').focus()});
+document.querySelectorAll('.seg button').forEach(b=>b.onclick=()=>{capKind=b.dataset.k;document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x===b));$('#capin').placeholder=capKind==='task'?'Add a task, e.g. Pitch review tomorrow':capKind==='idea'?'Add an idea':'Amount and note, e.g. 45 lunch';$('#capin').focus()});
 function parseDue(txt){let t=txt,due='';const lw=t.toLowerCase();const dn=['sunday','monday','tuesday','wednesday','thursday','friday','saturday'];
 if(/\btoday\b/.test(lw)){due=today();t=t.replace(/\s*\btoday\b/i,'')}else if(/\btomorrow\b/.test(lw)){due=plus(1);t=t.replace(/\s*\btomorrow\b/i,'')}
 else{for(let k=0;k<7;k++){const re=new RegExp('\\s*\\b(on |by )?('+dn[k]+'|'+dn[k].slice(0,3)+')\\b','i');if(re.test(t)){let n=(k-new Date().getDay()+7)%7||7;due=plus(n);t=t.replace(re,'');break}}}
@@ -1007,7 +1140,7 @@ const dur=ms=>{const m=Math.max(0,Math.round(ms/6e4));return m<60?`${m}m`:`${Mat
 function nextUp(){const now=new Date();const ev=CAL.events.map(e=>({t:e.t,d:new Date(e.s),all:e.all})).filter(e=>!e.all&&!isNaN(e.d)&&e.d>now).sort((a,b)=>a.d-b.d)[0];
 if(ev)return`next: ${esc(ev.t)} in ${dur(ev.d-now)}`;const t=open().filter(t=>t.due&&diff(t.due)>=0).sort(byDue)[0];if(t)return`next deadline: ${esc(t.title)} · ${rel(t.due).toLowerCase()}`;
 const mid=new Date(now);mid.setHours(24,0,0,0);return`${dur(mid-now)} left today`}
-setInterval(()=>{const c=document.getElementById('bigclock');if(c)c.innerHTML=bigClock();const p=dayPct();const pb=document.getElementById('daybar');if(pb){pb.style.width=p+'%';document.getElementById('daypct').textContent=p+'%'}if(new Date().getSeconds()===0){const n=document.getElementById('nextup');if(n)n.innerHTML=nextUp()}},1000);
+setInterval(()=>{const c=document.getElementById('bigclock');if(c)c.innerHTML=bigClock();const p=dayPct();const pb=document.getElementById('daybar');if(pb){pb.style.width=p+'%';document.getElementById('daynow').style.left=p+'%';document.getElementById('daypct').textContent=p+'%'}if(new Date().getSeconds()===0){const n=document.getElementById('nextup');if(n)n.innerHTML=nextUp()}},1000);
 let lastView='';
 function countUp(){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;document.querySelectorAll('.cu').forEach(el=>{const v=+el.dataset.v||0;const t0=performance.now();const step=t=>{const k=Math.min(1,(t-t0)/800);el.textContent=Math.round(v*(1-Math.pow(1-k,3)));if(k<1)requestAnimationFrame(step)};requestAnimationFrame(step)})}
 

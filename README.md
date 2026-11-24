@@ -34,3 +34,7 @@ A single static `index.html` (HTML, CSS and vanilla JS). There's no build step a
 ## Brand
 
 `brand/nexus-logo.svg` is the full lockup and `brand/nexus-mark.svg` is the app icon. Colours: ink `#0f1213`, vermilion `#e5482d`, light `#eceeef`. Typeface: DM Sans.
+
+## Design credit
+
+The interface was refined with [unslop](https://github.com/heydamir/unslop) by Damir Sokolovsky ([@heydamir](https://x.com/heydamir)), licensed CC BY 4.0.
