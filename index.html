@@ -717,6 +717,41 @@ main{max-width:1600px;margin:0 auto}
 .brand{display:flex!important;align-items:center;gap:10px!important}.brand svg{width:28px!important;height:28px!important}
 .orbit.sm{min-height:320px!important;margin:24px 0 8px!important}
 .tiles{grid-template-columns:repeat(auto-fill,minmax(176px,1fr))!important}
+/* ===== v9: distinguishable cards ===== */
+main .sh h2 .it,main .fsl .it{width:32px!important;height:32px!important;border-radius:8px!important;background:color-mix(in srgb,var(--cc) 16%,transparent)!important;color:var(--cc)!important}
+main .sh h2 .it svg{width:17px;height:17px}
+.cico{--cc:#888;width:40px;height:40px;border-radius:10px;display:grid;place-items:center;flex:none;background:color-mix(in srgb,var(--cc) 16%,transparent);color:var(--cc)}
+.cico.sm{width:28px;height:28px;border-radius:8px}
+.fsum{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.fs{display:grid;gap:8px;align-content:start}
+.fsl{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--mute)}
+.fsv{font-size:32px;font-weight:500;letter-spacing:-.02em;white-space:nowrap;margin-top:8px}
+.fs.in .fsv{color:var(--ok)}.fsv.neg{color:var(--neg)}
+.fsf{font-size:13px;color:var(--soft)}
+.fs.in{border-top:2px solid var(--ok)!important}.fs.out{border-top:2px solid var(--neg)!important}.fs.bud{border-top:2px solid var(--c-finance)!important}
+.fsrow{display:flex;justify-content:space-between;align-items:center;gap:16px}
+.g2{width:120px;flex:none;margin:-8px -8px -16px 0}
+.crow{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:16px;align-items:center;padding:16px 0;border-bottom:1px solid var(--line)}
+.crow:last-child{border-bottom:0}
+.ctop{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.ctop b{font-size:15px;font-weight:500}
+.camt{font-size:15px;white-space:nowrap}.camt small{font-size:13px;color:var(--soft)}
+.cbar{height:6px;background:#2c2c2f;border-radius:3px;overflow:hidden;margin-top:8px}.cbar i{display:block;height:100%;border-radius:3px}
+.cfoot{font-size:13px;color:var(--soft);margin-top:6px}
+.linkb{background:none;border:0;padding:0;color:var(--ink);text-decoration:underline;cursor:pointer;font-size:13px}
+.qlab{font-size:13px;color:var(--mute);margin:12px 0 8px}
+.qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.qa{display:flex;align-items:center;gap:10px;padding:8px;border-radius:10px;border:1px solid var(--line);background:var(--raised);cursor:pointer;text-align:left;font-size:13px;color:var(--ink);transition:background-color .15s var(--ease),border-color .15s var(--ease)}
+.qa:hover{background:#2a2a2d;border-color:rgba(237,237,237,.16)}
+.qa .cico{width:28px;height:28px;border-radius:8px}
+.qa span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lrow{display:grid;grid-template-columns:28px minmax(0,1fr) auto auto;gap:12px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line);font-size:14px}
+.lrow:last-child{border-bottom:0}
+.gl{padding:12px 0;border-bottom:1px solid var(--line)}
+.tx .ico{background:color-mix(in srgb,var(--cc) 16%,transparent)!important;color:var(--cc)!important;width:40px!important;height:40px!important;border-radius:10px!important}
+.tx{grid-template-columns:40px minmax(0,1fr) auto auto!important}
+@media(max-width:1000px){.fsum{grid-template-columns:1fr}}
+@media(max-width:600px){.qgrid{grid-template-columns:1fr 1fr}.fsv{font-size:28px}}
 </style>
 <script>new MutationObserver(()=>{for(const c of document.querySelectorAll('.stack td:not([data-l])')){let i=0,p=c;while(p=p.previousElementSibling)i+=p.colSpan;c.dataset.l=c.closest('table').rows[0].cells[i]?.textContent||''}}).observe(document,{childList:true,subtree:true})</script>
 </head>
@@ -972,7 +1007,7 @@ V.finance=()=>{const m=finM,f=fin(m),[y,mo]=m.split('-').map(Number),isCur=m===m
 const B=S.budgets.reduce((a,b)=>a+(+b.limit||0),0),rem=B-f.exp,left=isCur?dim-tD+1:0;
 const perDay=Array.from({length:dim},(_,i)=>{const ds=`${m}-${String(i+1).padStart(2,'0')}`;const tx=f.tx.filter(t=>t.date===ds);return{ds,o:tx.filter(t=>t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0),i:tx.filter(t=>t.type==='Income').reduce((a,t)=>a+(+t.amount||0),0)}});
 const mx=Math.max(1,...perDay.map(d=>d.o));const nz=perDay.filter(d=>d.o>0);const most=nz.length?Math.max(...nz.map(d=>d.o)):0,least=nz.length?Math.min(...nz.map(d=>d.o)):0;
-const head=`<div class="hd"><div><h1>${ph('finance')}Finance</h1><div class="mnav"><button class="ic" data-act="fm" data-d="-1" aria-label="Previous month">‹</button><b>${MON[mo-1]} ${y}</b><button class="ic" data-act="fm" data-d="1" aria-label="Next month">›</button><span style="margin-left:12px;font-size:15px"><span class="o">Out ${money(f.exp)}</span>&nbsp;&nbsp;<span class="i">In ${money(f.inc)}</span></span></div></div>
+const head=`<div class="hd"><div><h1>${ph('finance')}Finance</h1><div class="mnav"><button class="ic" data-act="fm" data-d="-1" aria-label="Previous month">‹</button><b>${MON[mo-1]} ${y}</b><button class="ic" data-act="fm" data-d="1" aria-label="Next month">›</button></div></div>
 <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn ghost" data-act="add" data-t="txn" data-c="Project income">${icon('plus',15)}Income</button><button class="btn" data-act="add" data-t="txn" data-c="Food">${icon('plus',15)}Expense</button></div></div>
 <div class="tabs" style="margin-bottom:24px;border-bottom:1px solid var(--line)">${[['overview','Overview'],['calendar','Calendar'],['stats','Stats']].map(([k,l])=>`<button data-act="ftab" data-k="${k}" aria-pressed="${finTab===k}">${l}</button>`).join('')}</div>`;
 const tile=(c,inc)=>{const amt=f.tx.filter(t=>t.category===c[0]).reduce((a,t)=>a+(+t.amount||0),0);const b=S.budgets.find(x=>x.category===c[0]);
@@ -991,19 +1026,27 @@ ${cats.map(([c,v])=>`<div class="leg"><i style="background:${ccol(c)}"></i><span
 <div class="figs" style="margin-top:12px"><div><div class="k">Daily average</div><div class="v">${money(f.exp/(isCur?tD:dim))}</div></div><div><div class="k">Most in a day</div><div class="v">${money(most)}</div></div><div><div class="k">Savings rate</div><div class="v">${f.inc?Math.round(f.net/f.inc*100)+'%':'–'}</div></div></div></section></div>`}
 /* overview */
 const pct=B?Math.min(1,f.exp/B):0;const pt=a=>{const r=a*Math.PI/180;return(100+78*Math.cos(r)).toFixed(1)+' '+(100+78*Math.sin(r)).toFixed(1)};const arc=(a0,a1)=>`M${pt(a0)} A78 78 0 ${a1-a0>180?1:0} 1 ${pt(a1)}`;
-const gauge=`<svg viewBox="0 0 200 170" role="img" aria-label="Budget remaining"><path d="${arc(150,390)}" fill="none" stroke="var(--panel)" stroke-width="14"/>${pct>0?`<path d="${arc(150,150+Math.max(1,240*pct))}" fill="none" stroke="${rem<0?'var(--accent)':'var(--ok)'}" stroke-width="14"/>`:''}
-<text x="100" y="92" text-anchor="middle" font-size="22" font-weight="700" fill="${rem<0?'var(--accent)':'var(--ink)'}">${B?esc(money(Math.abs(rem))):'–'}</text><text x="100" y="114" text-anchor="middle" font-size="12" fill="var(--mute)">${B?(rem<0?'over budget':'remaining'):'set budgets below'}</text>
-${B&&left&&rem>0?`<text x="100" y="160" text-anchor="middle" font-size="12" fill="var(--mute)">≈ ${esc(money(rem/left))} per day left</text>`:''}</svg>`;
+const gauge=`<svg viewBox="0 0 200 150" class="g2" role="img" aria-label="Budget used"><path d="${arc(150,390)}" fill="none" stroke="#2c2c2f" stroke-width="16"/>${pct>0?`<path d="${arc(150,150+Math.max(1,240*pct))}" fill="none" stroke="${rem<0?'var(--neg)':'var(--ok)'}" stroke-width="16"/>`:''}<text x="100" y="98" text-anchor="middle" font-size="30" font-weight="500" fill="var(--ink)">${Math.round(pct*100)}%</text><text x="100" y="120" text-anchor="middle" font-size="12" fill="var(--mute)">used</text></svg>`;
+const ninc=f.tx.filter(t=>t.type==='Income').length,nexp=f.tx.filter(t=>t.type==='Expense').length;
+const rows=EXP.map(c=>({c,sp:f.byCat[c[0]]||0,b:S.budgets.find(x=>x.category===c[0])})).filter(r=>r.sp||r.b).sort((a,b)=>b.sp-a.sp);
+const crow=({c,sp,b})=>{const p=b?sp/b.limit*100:0;return`<div class="crow"><span class="cico" style="--cc:${c[1]}">${ico(c[0],18)}</span><div class="cmain"><div class="ctop"><b>${esc(c[0])}</b><span class="camt">${money(sp)}${b?`<small> of ${money(+b.limit)}</small>`:''}</span></div>${b?`<div class="cbar"><i style="width:${Math.min(100,p)}%;background:${p>100?'var(--neg)':c[1]}"></i></div><div class="cfoot">${p>100?`<span style="color:var(--neg)">${money(sp-b.limit)} over budget</span>`:`${money(b.limit-sp)} left · ${Math.round(p)}% used`}</div>`:`<div class="cfoot">No budget set · <button class="linkb" data-act="add" data-t="budget" data-c2="${esc(c[0])}">Set budget</button></div>`}</div><button class="ic" data-act="add" data-t="txn" data-c="${esc(c[0])}" aria-label="Log ${esc(c[0])}">${icon('plus',16)}</button></div>`};
+const incRows=INC.map(c=>({c,v:f.tx.filter(t=>t.category===c[0]).reduce((a,t)=>a+(+t.amount||0),0)})).filter(r=>r.v).sort((a,b)=>b.v-a.v);
+const qa=(c)=>`<button class="qa" data-act="add" data-t="txn" data-c="${esc(c[0])}"><span class="cico" style="--cc:${c[1]}">${ico(c[0],16)}</span><span>${esc(c[0])}</span></button>`;
 const gs=S.goals.reduce((a,g)=>a+(+g.saved||0),0);
-return head+`<div class="fov"><section class="gauge"><div class="sh"><h2>Budget</h2><span class="note">${money(f.exp)} of ${money(B)}</span></div>${gauge}</section>
-<section><div class="sh"><h2>Daily spending</h2><span class="note">Most ${money(most)} · Least ${money(least)}</span></div><div class="bars">${perDay.map((d,i)=>`<i class="${isCur&&i+1===tD?'t':''}" style="height:${d.o?Math.max(3,d.o/mx*100):0.5}%" title="${i+1} ${MON[mo-1]}: ${money(d.o)}"></i>`).join('')}</div><div class="axis"><span>1</span><span>10</span><span>20</span><span>${dim}</span></div></section></div>
-<section class="sec"><div class="sh"><h2>Spending</h2><span class="note">Tap a category to log fast</span></div><div class="tiles">${EXP.map(c=>tile(c)).join('')}</div></section>
-<section class="sec"><div class="sh"><h2>Income</h2><span class="note"><span class="i">${money(f.inc)}</span> this month</span></div><div class="tiles">${INC.map(c=>tile(c,1)).join('')}</div></section>
-<div class="grid2 sec"><section><div class="sh"><h2>Records</h2><span class="note">${f.tx.length} this month</span></div>${record(f.tx)}${starterNote('txns')}</section>
-<aside class="side"><section><div class="sh"><h2>Budgets</h2>${addBtn('budget','Budget')}</div>${S.budgets.length?S.budgets.map(b=>{const sp=f.byCat[b.category]||0;const p=b.limit?sp/b.limit*100:0;return`<div class="mrow"><span><i class="sw" style="background:${ccol(b.category)}"></i>${esc(b.category)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('budget',b.id)}</span></span><span class="r" style="${p>100?'color:var(--accent)':''}">${money(sp)} / ${money(+b.limit||0)}</span>${meter(p,ccol(b.category))}</div>`}).join(''):'<p class="empty">No budgets yet</p>'}</section>
-<section><div class="sh"><h2>Savings goals</h2>${addBtn('goal','Goal')}</div>${S.goals.length?S.goals.map(g=>`<div class="mrow"><span>${esc(g.name)} <span class="ra" style="display:inline-flex;vertical-align:middle">${rowActs('goal',g.id)}</span></span><span class="r">${money(+g.saved||0)} / ${money(+g.target||0)}</span>${meter(g.target?g.saved/g.target*100:0,'var(--ok)')}</div>`).join('')+`<p class="meta">Total saved: ${money(gs)}</p>`:'<p class="empty">No savings goals yet</p>'}</section></aside></div>`};
+return head+`<div class="fsum">
+<section class="fs in"><div class="fsl"><span class="it" style="--cc:var(--ok)">${icon('growth',18)}</span>Money in</div><div class="fsv">+${money(f.inc)}</div><div class="fsf">${ninc} payment${ninc===1?'':'s'} this month</div></section>
+<section class="fs out"><div class="fsl"><span class="it" style="--cc:var(--neg)">${icon('coin',18)}</span>Money out</div><div class="fsv">−${money(f.exp)}</div><div class="fsf">${nexp} expense${nexp===1?'':'s'} · net ${money(f.net)}</div></section>
+<section class="fs bud"><div class="fsl"><span class="it" style="--cc:var(--c-finance)">${icon('target',18)}</span>Budget left</div><div class="fsrow"><div><div class="fsv ${rem<0?'neg':''}">${B?money(rem):'–'}</div><div class="fsf">${B?`of ${money(B)}${left&&rem>0?` · ≈ ${money(rem/left)} a day`:''}`:'Set budgets below'}</div></div>${B?gauge:''}</div></section></div>
+<div class="grid2 sec"><section><div class="sh"><h2>Where your money went</h2><span class="note">${MON[mo-1]} · by category</span></div>${rows.length?rows.map(crow).join(''):'<p class="empty">No spending yet this month</p>'}</section>
+<aside class="side"><section><div class="sh"><h2>Quick log</h2><span class="note">Tap to add</span></div><div class="qlab">Spending</div><div class="qgrid">${EXP.map(qa).join('')}</div><div class="qlab">Income</div><div class="qgrid">${INC.map(qa).join('')}</div></section>
+<section><div class="sh"><h2>Income sources</h2><span class="note i">+${money(f.inc)}</span></div>${incRows.length?incRows.map(({c,v})=>`<div class="crow"><span class="cico" style="--cc:${c[1]}">${ico(c[0],18)}</span><div class="cmain"><div class="ctop"><b>${esc(c[0])}</b><span class="camt i">+${money(v)}</span></div><div class="cfoot">${Math.round(v/f.inc*100)}% of income</div></div><span></span></div>`).join(''):'<p class="empty">No income yet this month</p>'}</section></aside></div>
+<div class="grid2 sec"><div style="display:grid;gap:24px;align-content:start"><section><div class="sh"><h2>Daily spending</h2><span class="note">Most ${money(most)} · least ${money(least)}</span></div><div class="bars">${perDay.map((d,i)=>`<i class="${isCur&&i+1===tD?'t':''}" style="height:${d.o?Math.max(3,d.o/mx*100):0.5}%" title="${i+1} ${MON[mo-1]}: ${money(d.o)}"></i>`).join('')}</div><div class="axis"><span>1 ${MON[mo-1]}</span><span>10</span><span>20</span><span>${dim}</span></div></section>
+<section><div class="sh"><h2>Records</h2><span class="note">${f.tx.length} this month</span></div>${record(f.tx)}${starterNote('txns')}</section></div>
+<aside class="side"><section><div class="sh"><h2>Budget limits</h2>${addBtn('budget','Budget')}</div>${S.budgets.length?S.budgets.map(b=>`<div class="lrow"><span class="cico sm" style="--cc:${ccol(b.category)}">${ico(b.category,14)}</span><span>${esc(b.category)}</span><span class="r">${money(+b.limit||0)} / month</span><div class="ra">${rowActs('budget',b.id)}</div></div>`).join(''):'<p class="empty">No budgets yet</p>'}</section>
+<section><div class="sh"><h2>Savings goals</h2>${addBtn('goal','Goal')}</div>${S.goals.length?S.goals.map(g=>{const p=g.target?g.saved/g.target*100:0;return`<div class="gl"><div class="ctop"><b>${esc(g.name)}</b><span class="camt">${money(+g.saved||0)}<small> of ${money(+g.target||0)}</small></span></div><div class="cbar"><i style="width:${Math.min(100,p)}%;background:var(--ok)"></i></div><div class="cfoot" style="display:flex;justify-content:space-between"><span>${Math.round(p)}% saved</span><span class="ra">${rowActs('goal',g.id)}</span></div></div>`}).join('')+`<p class="meta">Total saved ${money(gs)}</p>`:'<p class="empty">No savings goals yet</p>'}</section></aside></div>`};
+
 function record(list,group=true){if(!list.length)return'<p class="empty">No records this month</p>';
-const row=t=>`<div class="tx"><span class="ico" style="background:${ccol(t.category)}">${ico(t.category,17)}</span><div><div class="tt">${esc(t.label)}</div><div class="meta">${esc(t.category)}${t.project?' · '+esc(t.project):''}${group?'':' · '+pd(t.date).getDate()+' '+MON[pd(t.date).getMonth()]}</div></div><span class="amt ${t.type==='Income'?'i':'o'}">${t.type==='Income'?'+':'−'}${money(+t.amount||0)}</span><div class="ra">${rowActs('txn',t.id)}</div></div>`;
+const row=t=>`<div class="tx"><span class="ico" style="--cc:${ccol(t.category)}">${ico(t.category,18)}</span><div><div class="tt">${esc(t.label)}</div><div class="meta">${esc(t.category)}${t.project?' · '+esc(t.project):''}${group?'':' · '+pd(t.date).getDate()+' '+MON[pd(t.date).getMonth()]}</div></div><span class="amt ${t.type==='Income'?'i':'o'}">${t.type==='Income'?'+':'−'}${money(+t.amount||0)}</span><div class="ra">${rowActs('txn',t.id)}</div></div>`;
 if(!group)return list.map(row).join('');
 const by={};[...list].sort((a,b)=>(b.date||'').localeCompare(a.date||'')).forEach(t=>(by[t.date]=by[t.date]||[]).push(t));
 return Object.entries(by).map(([d,ts])=>{const o=ts.filter(t=>t.type==='Expense').reduce((a,t)=>a+(+t.amount||0),0),i=ts.filter(t=>t.type==='Income').reduce((a,t)=>a+(+t.amount||0),0);const dd=pd(d);
@@ -1039,7 +1082,7 @@ ${S.practice.length?`<ul class="list">${[...S.practice].sort((a,b)=>b.date.local
 <section><div class="sh"><h2>Leadership goals</h2>${addBtn('lgoal','Goal')}</div>${S.lgoals.map(g=>`<div class="mrow"><span><b>${esc(g.title)}</b>${g.why?`<div class="meta">${esc(g.why)}</div>`:''}<span class="ra" style="display:inline-flex">${rowActs('lgoal',g.id)}</span></span><span class="r">${+g.progress||0}%</span>${meter(+g.progress||0,'var(--c-leadership)')}</div>`).join('')}</section></aside></div>`};
 
 /* ---------- render ---------- */
-const H2=[['Focus','target'],['Agenda','list'],['Areas','today'],['This week','calendar'],['Up next','list','var(--ink)'],['Calendar','calendar','#3b82f6'],['Money','finance'],['Growth','growth'],['Assignments','list'],['Courses','academics'],['Study plan','clock'],['Constituent','users'],['Responsibilities','leadership'],['Meetings','calendar'],['Leadership goals','target','var(--c-leadership)'],['Budgets','target'],['Budget','target'],['Daily','bars'],['Spending','coin'],['Income','growth','var(--ok)'],['Records','list'],['Savings','target','var(--ok)'],['Trends','growth'],['Categories','pie'],['Biggest','alert','var(--accent)'],['Ranked','ideas'],['Opportunity','target'],['CS50W','code','var(--c-growth)'],['Programming','code','var(--c-growth)'],['Reading','book','var(--c-growth)'],['All of','list']];
+const H2=[['Focus','target','var(--accent)'],['Agenda','list','#5b8def'],['Areas','today','#a78bfa'],['This week','calendar','#5b8def'],['Where','pie','var(--c-finance)'],['Quick log','plus','var(--ink)'],['Income sources','growth','var(--ok)'],['Budget limits','target','var(--c-finance)'],['Up next','list','var(--ink)'],['Calendar','calendar','#5b8def'],['Money','finance','var(--c-finance)'],['Growth','growth','var(--c-growth)'],['Assignments','list'],['Courses','academics'],['Study plan','clock'],['Constituent','users'],['Responsibilities','leadership'],['Meetings','calendar'],['Leadership goals','target','var(--c-leadership)'],['Budgets','target'],['Budget','target'],['Daily','bars'],['Spending','coin'],['Income','growth','var(--ok)'],['Records','list'],['Savings','target','var(--ok)'],['Trends','growth'],['Categories','pie'],['Biggest','alert','var(--accent)'],['Ranked','ideas'],['Opportunity','target'],['CS50W','code','var(--c-growth)'],['Programming','code','var(--c-growth)'],['Reading','book','var(--c-growth)'],['All of','list']];
 function decorate(v){document.querySelectorAll('#view .sh h2').forEach(h=>{if(h.querySelector('.it'))return;const t=h.textContent.trim();const m=H2.find(x=>t.startsWith(x[0]));const col=m&&m[2]||(v==='today'?'var(--c-'+(m?m[1]:'general')+')':'var(--c-'+v+')');h.insertAdjacentHTML('afterbegin',it(m?m[1]:v==='business'?'business':'calendar',col))})}
 
 let ro=null;
@@ -1108,7 +1151,7 @@ catch(e){busy[id]=false;render();toast(e&&e.code==='rate_limited'?'Claude is bus
 document.addEventListener('click',e=>{const b=e.target.closest('[data-act]');if(!b)return;const a=b.dataset.act,id=b.dataset.id;
 if(a==='close'){close();return}
 if(a==='pal'){palOpen();return}
-if(a==='add'){const pre={};if(b.dataset.p)pre.area=b.dataset.p;if(b.dataset.r)pre.ref=b.dataset.r;if(b.dataset.c){pre.category=b.dataset.c;pre.type=isInc(b.dataset.c)?'Income':'Expense'}if(b.dataset.dt)pre.date=b.dataset.dt;openForm(b.dataset.t,null,pre);return}
+if(a==='add'){const pre={};if(b.dataset.p)pre.area=b.dataset.p;if(b.dataset.r)pre.ref=b.dataset.r;if(b.dataset.c){pre.category=b.dataset.c;pre.type=isInc(b.dataset.c)?'Income':'Expense'}if(b.dataset.dt)pre.date=b.dataset.dt;if(b.dataset.c2)pre.category=b.dataset.c2;openForm(b.dataset.t,null,pre);return}
 if(a==='edit'){openForm(b.dataset.t,id);return}
 if(a==='del'){const sp=F[b.dataset.t];const arr=S[sp.c];const ix=arr.findIndex(x=>x.id===id);if(ix<0)return;const [it]=arr.splice(ix,1);commit();toast(`Deleted ${sp.n}`,()=>arr.splice(ix,0,it));return}
 if(a==='toggle'){const t=S.tasks.find(x=>x.id===id);if(!t)return;t.done=!t.done;t.doneAt=t.done?today():'';commit();if(t.done)toast('Marked done',()=>{t.done=false});return}
